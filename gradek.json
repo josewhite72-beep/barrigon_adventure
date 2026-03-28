@@ -1,0 +1,345 @@
+{
+  "grade": "Kinder",
+  "label": "Kinder",
+  "color": "#FF9500",
+  "mascot": "🐥",
+  "scenarios": [
+    {
+      "id": 1,
+      "title": "It's a School Day!",
+      "location": "school",
+      "themes": [
+        {
+          "index": 0,
+          "title": "Let's Listen!",
+          "vocabulary": [
+            "listen",
+            "look",
+            "clap",
+            "stand",
+            "sit"
+          ],
+          "narrative": {
+            "intro": "It's a school day in Barrigón! Let's listen to our teacher at The School! 🏫"
+          },
+          "activities": {
+            "listening": {
+              "instruction": "🎧 Listen! Tap the picture!",
+              "type": "mc",
+              "ttsText": "Listen! Listen to the teacher! Shhh... listen!",
+              "prompt": "👂 Listen!",
+              "options": [
+                "👂 Listen",
+                "👏 Clap",
+                "🧍 Stand",
+                "👀 Look"
+              ],
+              "answer": 0,
+              "feedback": "Yes! Listen! 👂"
+            },
+            "reading": {
+              "instruction": "📖 Find the picture!",
+              "type": "mc",
+              "prompt": "LISTEN",
+              "options": [
+                "👂",
+                "👏",
+                "🧍",
+                "👀"
+              ],
+              "answer": 0,
+              "feedback": "Yes! 👂 Listen!"
+            },
+            "speaking": {
+              "instruction": "🗣️ Say it out loud!",
+              "type": "speak",
+              "prompt": "Listen!",
+              "ttsText": "Listen!",
+              "image": "👂",
+              "caption": "The School 🏫",
+              "feedback": "Great! 🌟"
+            }
+          }
+        },
+        {
+          "index": 1,
+          "title": "Stand Up!",
+          "vocabulary": [
+            "stand up",
+            "sit down",
+            "clap",
+            "jump",
+            "stop"
+          ],
+          "narrative": {
+            "intro": "At The School in Barrigón, our teacher says: Stand up! Sit down! Let's move! 🏫"
+          },
+          "activities": {
+            "listening": {
+              "instruction": "🎧 Listen! Tap the picture!",
+              "type": "mc",
+              "ttsText": "Stand up! Stand up everybody! Stand up now!",
+              "prompt": "🧍 Stand up!",
+              "options": [
+                "🧍 Stand up",
+                "🪑 Sit down",
+                "👏 Clap",
+                "⛔ Stop"
+              ],
+              "answer": 0,
+              "feedback": "Yes! Stand up! 🧍"
+            },
+            "reading": {
+              "instruction": "📖 Find the picture!",
+              "type": "mc",
+              "prompt": "STAND UP",
+              "options": [
+                "🪑",
+                "🧍",
+                "👏",
+                "⛔"
+              ],
+              "answer": 1,
+              "feedback": "Yes! 🧍 Stand up!"
+            },
+            "speaking": {
+              "instruction": "🗣️ Say it out loud!",
+              "type": "speak",
+              "prompt": "Stand up!",
+              "ttsText": "Stand up!",
+              "image": "🧍",
+              "caption": "The School 🏫",
+              "feedback": "Wonderful! 🌟"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "title": "Our Routines",
+      "location": "school",
+      "themes": [
+        {
+          "index": 0,
+          "title": "First, I Sit Down.",
+          "vocabulary": [
+            "first",
+            "sit down",
+            "open",
+            "take out",
+            "look"
+          ],
+          "narrative": {
+            "intro": "Every morning at The School in Barrigón, we follow our routine! First, sit down! 🏫"
+          },
+          "activities": {
+            "listening": {
+              "instruction": "🎧 Listen! What do we do FIRST? Tap it!",
+              "type": "mc",
+              "ttsText": "Good morning! First, sit down. Sit down please. First, sit down!",
+              "prompt": "First, I ______! 🪑",
+              "options": [
+                "🪑 Sit down",
+                "📖 Open book",
+                "✏️ Write",
+                "🏃 Run"
+              ],
+              "answer": 0,
+              "feedback": "Yes! First, sit down! 🪑"
+            },
+            "reading": {
+              "instruction": "📖 Find the picture!",
+              "type": "mc",
+              "prompt": "SIT DOWN",
+              "options": [
+                "🏃",
+                "✏️",
+                "🪑",
+                "📖"
+              ],
+              "answer": 2,
+              "feedback": "Yes! 🪑 Sit down!"
+            },
+            "speaking": {
+              "instruction": "🗣️ Say it out loud!",
+              "type": "speak",
+              "prompt": "First, I sit down.",
+              "ttsText": "First, I sit down.",
+              "image": "🪑",
+              "caption": "The School 🏫",
+              "feedback": "Perfect! 🌟"
+            }
+          }
+        },
+        {
+          "index": 1,
+          "title": "Pick It Up!",
+          "vocabulary": [
+            "pick up",
+            "put down",
+            "give me",
+            "thank you",
+            "please"
+          ],
+          "narrative": {
+            "intro": "At The School in Barrigón, we help each other! Pick it up! Put it down! 🏫"
+          },
+          "activities": {
+            "listening": {
+              "instruction": "🎧 Listen! Tap the picture!",
+              "type": "mc",
+              "ttsText": "Pick it up! Pick up the pencil! Pick it up please!",
+              "prompt": "✏️ Pick it ______!",
+              "options": [
+                "⬆️ Up",
+                "⬇️ Down",
+                "🔄 Around",
+                "⏹️ Stop"
+              ],
+              "answer": 0,
+              "feedback": "Yes! Pick it UP! ✏️⬆️"
+            },
+            "reading": {
+              "instruction": "📖 Find the picture!",
+              "type": "mc",
+              "prompt": "PICK IT UP",
+              "options": [
+                "⬇️",
+                "⬆️",
+                "🔄",
+                "⏹️"
+              ],
+              "answer": 1,
+              "feedback": "Yes! ⬆️ Pick it up!"
+            },
+            "speaking": {
+              "instruction": "🗣️ Say it out loud!",
+              "type": "speak",
+              "prompt": "Pick it up!",
+              "ttsText": "Pick it up!",
+              "image": "✏️",
+              "caption": "The School 🏫",
+              "feedback": "Amazing! 🌟"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "title": "Hold Up Ten Fingers!",
+      "location": "school",
+      "themes": [
+        {
+          "index": 0,
+          "title": "I Can Count!",
+          "vocabulary": [],
+          "activities": {}
+        },
+        {
+          "index": 1,
+          "title": "All the Pencils!",
+          "vocabulary": [],
+          "activities": {}
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "title": "Where Is It?",
+      "location": "school",
+      "themes": [
+        {
+          "index": 0,
+          "title": "Over Here!",
+          "vocabulary": [],
+          "activities": {}
+        },
+        {
+          "index": 1,
+          "title": "It's Under the Chair.",
+          "vocabulary": [],
+          "activities": {}
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "title": "What's that Sound?",
+      "location": "school",
+      "themes": [
+        {
+          "index": 0,
+          "title": "Letters Make Sounds.",
+          "vocabulary": [],
+          "activities": {}
+        },
+        {
+          "index": 1,
+          "title": "Let's Write Our Names!",
+          "vocabulary": [],
+          "activities": {}
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "title": "Let's Dance!",
+      "location": "church",
+      "themes": [
+        {
+          "index": 0,
+          "title": "Come to My Party!",
+          "vocabulary": [],
+          "activities": {}
+        },
+        {
+          "index": 1,
+          "title": "Let's Sing a Song.",
+          "vocabulary": [],
+          "activities": {}
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "title": "I'm Happy.",
+      "location": "school",
+      "themes": [
+        {
+          "index": 0,
+          "title": "I'm Angry.",
+          "vocabulary": [],
+          "activities": {}
+        },
+        {
+          "index": 1,
+          "title": "I Feel Safe.",
+          "vocabulary": [],
+          "activities": {}
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "title": "I Like School!",
+      "location": "school",
+      "themes": [
+        {
+          "index": 0,
+          "title": "I Like to Read.",
+          "vocabulary": [],
+          "activities": {}
+        },
+        {
+          "index": 1,
+          "title": "I Like Music.",
+          "vocabulary": [],
+          "activities": {}
+        }
+      ]
+    }
+  ],
+  "_note": "Activities not yet built. Add scenarios following grade2.json structure."
+}

@@ -1,0 +1,445 @@
+{
+  "grade": "G6",
+  "label": "Grade 6",
+  "color": "#AF52DE",
+  "mascot": "🦁",
+  "scenarios": [
+    {
+      "id": 1,
+      "title": "Reporting From the School!",
+      "location": "school",
+      "themes": [
+        {
+          "index": 0,
+          "title": "Our Community is Diverse!",
+          "vocabulary": [
+            "diverse",
+            "community",
+            "culture",
+            "tradition",
+            "heritage",
+            "represent",
+            "identity",
+            "celebrate"
+          ],
+          "narrative": {
+            "intro": "Barrigón is a diverse community with rich traditions! As student reporters, let's tell the world about it! 🏫📰🌍"
+          },
+          "activities": {
+            "listening": {
+              "instruction": "🎧 Listen to the school report. What makes Barrigón special? Tap it!",
+              "type": "mc",
+              "ttsText": "Good morning! This is your student reporter speaking from Barrigón School. Our community is incredibly diverse! We have families from different regions of Panama, each with their own traditions and culture. Some families celebrate Carnival with colorful costumes. Others honor indigenous traditions with beautiful Molas and Polleras. Our school reflects this diversity — every student brings something unique. Barrigón is special because of its diverse and welcoming community!",
+              "prompt": "📰 According to the report, what makes Barrigón special?",
+              "options": [
+                "Its large shopping center 🛒",
+                "Its diverse and welcoming community 🌍",
+                "Its modern school building 🏫",
+                "Its location near the capital 🏙️"
+              ],
+              "answer": 1,
+              "feedback": "Correct! Barrigón is special because of its diverse community! 🌍"
+            },
+            "reading": {
+              "instruction": "📖 Read the article and answer the inference question!",
+              "type": "mc",
+              "story": "SCHOOL REPORT — Barrigón Community News 📰\n\nBarrigón is home to a wonderfully diverse community. Families here represent different regions, traditions, and cultural backgrounds from across Panama. At our school, students learn not only English and Math, but also about the rich heritage that surrounds them — from the intricate patterns of Kuna Molas to the elegant steps of the Tamborito dance.\n\nOur teachers believe that understanding diversity makes students stronger, more empathetic, and better prepared for the world. As one student said: \"When I learn about my classmates' traditions, I feel proud of Panama.\"",
+              "question": "What can we INFER about the school's teaching philosophy?",
+              "options": [
+                "The school only focuses on academic subjects.",
+                "The school believes cultural knowledge makes students better people.",
+                "The school thinks traditions are less important than English.",
+                "The school only teaches Panamanian students."
+              ],
+              "answer": 1,
+              "feedback": "Excellent inference! Cultural knowledge makes students stronger people! 🌍📚"
+            },
+            "writing": {
+              "instruction": "✏️ Write TWO complete sentences about diversity in your community!",
+              "type": "write",
+              "prompt": "Our community in Barrigón is _______.\nWe celebrate our diversity by _______.",
+              "answer": "diverse",
+              "hint": "Think about traditions, cultures, and celebrations in Barrigón! 🌍",
+              "feedback": "Excellent writing! Your community report sounds professional! 📰"
+            },
+            "speaking": {
+              "instruction": "🗣️ Report to the class as a student journalist!",
+              "type": "speak",
+              "prompt": "Good morning! I'm reporting from Barrigón School. Our community is diverse and wonderful. We celebrate many traditions and cultures. Every student here represents something unique about Panama!",
+              "ttsText": "Good morning! I'm reporting from Barrigón School. Our community is diverse and wonderful. We celebrate many traditions and cultures. Every student here represents something unique about Panama!",
+              "image": "📰",
+              "caption": "The School 🏫 — Student Reporter!",
+              "feedback": "Outstanding report! You sound like a real journalist! 🌟📰"
+            },
+            "mediation": {
+              "instruction": "🌐 An international journalist visits your school. Help them understand!",
+              "type": "mc",
+              "prompt": "The journalist says:\n\"He escuchado que Barrigón es una comunidad muy diversa y acogedora. ¿Pueden explicarme qué significa eso exactamente?\"",
+              "options": [
+                "Barrigón is a large city with many buildings and stores.",
+                "Barrigón is diverse because it has people from different backgrounds who celebrate various traditions and welcome everyone.",
+                "Barrigón is a small community where everyone speaks only Spanish.",
+                "Barrigón is known for its modern technology and fast internet."
+              ],
+              "answer": 1,
+              "feedback": "Perfect! Diverse means different backgrounds, traditions, and welcoming everyone! 🌍"
+            }
+          }
+        },
+        {
+          "index": 1,
+          "title": "Everyone Is Welcome at Our School!",
+          "vocabulary": [
+            "welcome",
+            "inclusive",
+            "belong",
+            "accept",
+            "respect",
+            "equality",
+            "opportunity",
+            "encourage"
+          ],
+          "narrative": {
+            "intro": "At Barrigón School, every student belongs! Let's report on what makes our school truly inclusive. 🏫🤝"
+          },
+          "activities": {
+            "listening": {
+              "instruction": "🎧 Listen to the principal's message. What is the school's main value? Tap it!",
+              "type": "mc",
+              "ttsText": "Hello, students and families! This is your principal speaking. At Barrigón School, we believe that everyone is welcome here. It doesn't matter where you come from, what language you speak at home, or what traditions your family follows. Every student has the right to learn, to grow, and to feel that they belong. Inclusion is not just a word here — it is how we live every day. Remember: everyone is welcome at our school!",
+              "prompt": "🏫 What is the school's main value according to the principal?",
+              "options": [
+                "Academic excellence above all 📚",
+                "Sports and competition 🏆",
+                "Inclusion — everyone is welcome 🤝",
+                "Technology and innovation 💻"
+              ],
+              "answer": 2,
+              "feedback": "Yes! Inclusion — everyone is welcome at Barrigón School! 🤝🏫"
+            },
+            "reading": {
+              "instruction": "📖 Read and answer the inference question!",
+              "type": "mc",
+              "story": "BARRIGÓN SCHOOL — Our Values 📰\n\nAt Barrigón School, inclusion is more than a policy — it is a way of life. New students are welcomed with open arms. Students with different abilities are supported with special resources. Families from all backgrounds are invited to participate in school events.\n\nLast month, the school organized a Cultural Fair where students shared food, music, and traditions from different regions of Panama. The event was a huge success. \"I never felt so proud of where I come from,\" said one Grade 6 student. \"And I learned so much about my classmates' families too.\"",
+              "question": "What does the Cultural Fair suggest about the school's approach to inclusion?",
+              "options": [
+                "The school uses celebrations to make diversity visible and valued.",
+                "The school only celebrates Panamanian national holidays.",
+                "The Cultural Fair is only for Grade 6 students.",
+                "The school organizes events to raise money."
+              ],
+              "answer": 0,
+              "feedback": "Brilliant inference! The school uses celebrations to make diversity visible and valued! 🌍🎉"
+            },
+            "writing": {
+              "instruction": "✏️ Write TWO sentences about inclusion at your school!",
+              "type": "write",
+              "prompt": "At Barrigón School, everyone is _______.\nWe make new students feel _______ because we respect each other.",
+              "answer": "welcome",
+              "hint": "Think about how your school treats new or different students! 🤝",
+              "feedback": "Wonderful! Your school report is compassionate and clear! 📰🤝"
+            },
+            "speaking": {
+              "instruction": "🗣️ Give your opinion about inclusion at school!",
+              "type": "speak",
+              "prompt": "I believe everyone should feel welcome at school. At Barrigón School, we respect each other's cultures and traditions. Inclusion makes our school a better place for everyone!",
+              "ttsText": "I believe everyone should feel welcome at school. At Barrigón School, we respect each other's cultures and traditions. Inclusion makes our school a better place for everyone!",
+              "image": "🤝",
+              "caption": "The School 🏫 — Everyone Belongs!",
+              "feedback": "Powerful opinion! You spoke with confidence! 🌟🤝"
+            },
+            "mediation": {
+              "instruction": "🌐 A parent from another country is nervous about enrolling their child. Help them!",
+              "type": "mc",
+              "prompt": "The parent says:\n\"Tengo miedo de que mi hijo no encaje aquí porque viene de otra provincia y habla diferente.\"",
+              "options": [
+                "Your son will have to learn everything on his own.",
+                "Don't worry — at Barrigón School, everyone is welcome regardless of where they come from or how they speak.",
+                "Your son should stay home until his Spanish improves.",
+                "He will need to change his traditions to fit in here."
+              ],
+              "answer": 1,
+              "feedback": "Perfect! At Barrigón School, everyone is welcome — no matter where they come from! 🤝🏫"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "title": "We Should Clean the Classroom on Friday.",
+      "location": "school",
+      "themes": [
+        {
+          "index": 0,
+          "title": "Who Will Bring the Broom?",
+          "vocabulary": [
+            "should",
+            "responsibility",
+            "volunteer",
+            "assign",
+            "duty",
+            "contribute",
+            "cooperation",
+            "initiative"
+          ],
+          "narrative": {
+            "intro": "At Barrigón School, students organize their own cleaning schedule. Who takes initiative? 🏫🧹📋"
+          },
+          "activities": {
+            "listening": {
+              "instruction": "🎧 Listen! Why doesn't Carlos want to bring the broom? Tap the real reason!",
+              "type": "mc",
+              "ttsText": "The teacher says: We should clean the classroom on Friday. Who will bring the broom? Carlos says: I can't, I live far away. But Maria thinks: Carlos lives two streets from school — that's not far at all. He just doesn't want to take responsibility. Maria decides to bring the broom herself and also volunteers to organize the whole cleaning schedule. She shows real initiative and cooperation!",
+              "prompt": "🧹 Why doesn't Carlos REALLY want to bring the broom?",
+              "options": [
+                "He lives too far from school. 🏠",
+                "He doesn't want to take responsibility. 🙅",
+                "He already brought it last week. 📅",
+                "He doesn't know where the broom is. ❓"
+              ],
+              "answer": 1,
+              "feedback": "Correct! Carlos is avoiding responsibility — not because of distance! 🧹"
+            },
+            "reading": {
+              "instruction": "📖 Read and infer the meaning!",
+              "type": "mc",
+              "story": "CLASSROOM MEETING — Friday Cleaning Plan 📋\n\n\"We should clean the classroom on Friday,\" said Ms. Rivera. \"Who will bring the broom?\"\n\nSilence. Everyone looked at the floor.\n\nFinally, Sofia raised her hand. \"I'll bring the broom AND the dustpan,\" she said. \"And I think we should make a cleaning schedule so everyone takes turns. That way it's fair for everyone.\"\n\nMs. Rivera smiled. \"Sofia, that shows excellent initiative and a sense of responsibility. Does everyone agree?\"\n\nThe class nodded. From that day on, each student had a role on Fridays.",
+              "question": "What does Sofia's behavior tell us about her character?",
+              "options": [
+                "She wants to do all the work herself.",
+                "She is bossy and doesn't trust her classmates.",
+                "She shows initiative, fairness, and a sense of community responsibility.",
+                "She is trying to impress the teacher for a better grade."
+              ],
+              "answer": 2,
+              "feedback": "Excellent inference! Sofia shows initiative, fairness, and community responsibility! 🌟"
+            },
+            "writing": {
+              "instruction": "✏️ Write TWO complete sentences about classroom responsibility!",
+              "type": "write",
+              "prompt": "We should clean the classroom on Friday because _______.\nI will _______ to help keep our classroom clean.",
+              "answer": "responsibility",
+              "hint": "Think about why a clean classroom matters and what YOUR role is! 🧹",
+              "feedback": "Excellent! You expressed responsibility clearly and thoughtfully! 📋"
+            },
+            "speaking": {
+              "instruction": "🗣️ Convince your class to participate in the cleaning schedule!",
+              "type": "speak",
+              "prompt": "We should all take responsibility for our classroom! If everyone contributes, the work is easier and fairer. I volunteer to bring the broom on Friday. Who else will help?",
+              "ttsText": "We should all take responsibility for our classroom! If everyone contributes, the work is easier and fairer. I volunteer to bring the broom on Friday. Who else will help?",
+              "image": "🧹",
+              "caption": "The School 🏫 — Taking Initiative!",
+              "feedback": "Powerful speech! You inspired your classmates! 🌟🧹"
+            },
+            "mediation": {
+              "instruction": "🌐 A parent asks why students clean the classroom. Explain the deeper reason!",
+              "type": "mc",
+              "prompt": "A parent asks skeptically:\n\"¿Por qué los estudiantes tienen que limpiar? ¿No hay conserjes para eso?\"",
+              "options": [
+                "Because the school doesn't have enough money for janitors.",
+                "Because the teacher is lazy and makes students do her job.",
+                "Because cleaning teaches students responsibility, cooperation, and respect for shared spaces — skills they need for life.",
+                "Because it's a punishment for bad behavior."
+              ],
+              "answer": 2,
+              "feedback": "Perfect! Cleaning teaches responsibility, cooperation, and respect — life skills! 🌟🧹"
+            }
+          }
+        },
+        {
+          "index": 1,
+          "title": "Let's Make a Cleaning Schedule!",
+          "vocabulary": [
+            "schedule",
+            "organize",
+            "rotate",
+            "assign",
+            "efficient",
+            "consistent",
+            "deadline",
+            "accountable"
+          ],
+          "narrative": {
+            "intro": "Barrigón School Grade 6 is creating a cleaning schedule! Democracy, organization, and accountability in action. 🏫📅"
+          },
+          "activities": {
+            "listening": {
+              "instruction": "🎧 Listen! What problem does a rotating schedule solve? Tap it!",
+              "type": "mc",
+              "ttsText": "Let's make a cleaning schedule! The problem with NOT having a schedule is that the same students always end up doing all the work while others avoid their responsibilities. A rotating schedule solves this by assigning different tasks to different students each week. Monday: sweep. Tuesday: arrange chairs. Wednesday: wipe desks. Thursday: empty trash. Friday: mop. Everyone participates equally. A rotating schedule makes the system fair and keeps everyone accountable!",
+              "prompt": "📅 What problem does a rotating schedule solve?",
+              "options": [
+                "Students arriving late to school. ⏰",
+                "Some students always doing all the work while others avoid it. 🙅",
+                "The classroom being too small. 🏫",
+                "Students forgetting their homework. 📚"
+              ],
+              "answer": 1,
+              "feedback": "Exactly! A rotating schedule makes things fair for everyone! 📅🤝"
+            },
+            "reading": {
+              "instruction": "📖 Read the schedule and infer the best answer!",
+              "type": "mc",
+              "story": "GRADE 6 — FRIDAY CLEANING SCHEDULE 📅\n\nWeek 1: Group A sweeps | Group B arranges chairs | Group C wipes desks\nWeek 2: Group B sweeps | Group C arranges chairs | Group A wipes desks\nWeek 3: Group C sweeps | Group A arranges chairs | Group B wipes desks\n\nRules:\n• Everyone must participate — no exceptions.\n• If you are absent, you swap with a classmate.\n• The schedule rotates every week so all tasks are shared equally.\n• Students who don't participate will discuss it with Ms. Rivera.",
+              "question": "What does the rule about absences tell us about the schedule's design?",
+              "options": [
+                "Absent students don't have to clean at all.",
+                "The schedule is designed to be flexible while ensuring no one avoids their responsibility.",
+                "Students who are absent are punished.",
+                "The schedule only works when everyone is present."
+              ],
+              "answer": 1,
+              "feedback": "Brilliant! The schedule is flexible but ensures no one avoids responsibility! 📅🌟"
+            },
+            "writing": {
+              "instruction": "✏️ Write your OWN cleaning schedule for your classroom!",
+              "type": "write",
+              "prompt": "Our classroom cleaning schedule:\nMonday: I will _______.\nFriday: My group will _______ the classroom.",
+              "answer": "sweep",
+              "hint": "Think about tasks: sweep, mop, arrange, wipe, empty trash! 🧹",
+              "feedback": "Excellent! Your schedule is organized and fair! 📅🌟"
+            },
+            "speaking": {
+              "instruction": "🗣️ Present your cleaning schedule to the class and justify it!",
+              "type": "speak",
+              "prompt": "Here is our cleaning schedule! Each group rotates every week so the work is fair. This system builds responsibility and keeps our classroom clean. I believe everyone should be accountable for our shared space!",
+              "ttsText": "Here is our cleaning schedule! Each group rotates every week so the work is fair. This system builds responsibility and keeps our classroom clean. I believe everyone should be accountable for our shared space!",
+              "image": "📅",
+              "caption": "The School 🏫 — Our Schedule!",
+              "feedback": "Outstanding presentation! You argued your case brilliantly! 🌟📅"
+            },
+            "mediation": {
+              "instruction": "🌐 A classmate from another school visits and is confused by your system!",
+              "type": "mc",
+              "prompt": "The visiting student says:\n\"En mi escuela no limpiamos. No entiendo por qué aquí todos tienen que limpiar según un horario. ¿No es injusto?\"",
+              "options": [
+                "You're right — it is unfair and we don't like it either.",
+                "Actually, having a rotating schedule IS fair because everyone shares equal responsibility for the space they all use together.",
+                "We clean because the teacher forces us to.",
+                "Our school doesn't have enough money for cleaning staff, so we have no choice."
+              ],
+              "answer": 1,
+              "feedback": "Perfect mediation! A rotating schedule is fair — equal responsibility for shared spaces! 📅🤝"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "title": "I Need a Lot of Books!",
+      "location": "school",
+      "themes": [
+        {
+          "index": 0,
+          "title": "How Do I Find a Book in the Library?",
+          "vocabulary": [],
+          "activities": {}
+        },
+        {
+          "index": 1,
+          "title": "We Can Donate Old Books.",
+          "vocabulary": [],
+          "activities": {}
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "title": "I Will Write the Article About Our School Trip.",
+      "location": "waterfall",
+      "themes": [
+        {
+          "index": 0,
+          "title": "We Need Pictures for the Article.",
+          "vocabulary": [],
+          "activities": {}
+        },
+        {
+          "index": 1,
+          "title": "Let's Ask Some Questions!",
+          "vocabulary": [],
+          "activities": {}
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "title": "This Is My Amazing Community.",
+      "location": "church",
+      "themes": [
+        {
+          "index": 0,
+          "title": "This School Has Been Here for 50 Years.",
+          "vocabulary": [],
+          "activities": {}
+        },
+        {
+          "index": 1,
+          "title": "Balboa Avenue Was Built in 1952.",
+          "vocabulary": [],
+          "activities": {}
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "title": "Let's Recycle Our Paper!",
+      "location": "park",
+      "themes": [
+        {
+          "index": 0,
+          "title": "How Can We Help the Environment?",
+          "vocabulary": [],
+          "activities": {}
+        },
+        {
+          "index": 1,
+          "title": "We Will Plant Some Trees.",
+          "vocabulary": [],
+          "activities": {}
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "title": "Entrepreneurial Spirit",
+      "location": "shops",
+      "themes": [
+        {
+          "index": 0,
+          "title": "I Want to Start a Business.",
+          "vocabulary": [],
+          "activities": {}
+        },
+        {
+          "index": 1,
+          "title": "What Products Can We Sell?",
+          "vocabulary": [],
+          "activities": {}
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "title": "Checking in on Health",
+      "location": "school",
+      "themes": [
+        {
+          "index": 0,
+          "title": "I Haven't Exercised This Week.",
+          "vocabulary": [],
+          "activities": {}
+        },
+        {
+          "index": 1,
+          "title": "Have You Eaten Fruits and Vegetables?",
+          "vocabulary": [],
+          "activities": {}
+        }
+      ]
+    }
+  ],
+  "_note": "Activities not yet built. Add scenarios following grade2.json structure."
+}

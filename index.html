@@ -1,0 +1,1438 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+<title>Barrigón Adventure Platform</title>
+<link rel="manifest" href="/manifest.json" />
+<meta name="theme-color" content="#007AFF" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-title" content="Barrigón" />
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Fredoka+One&family=Nunito:wght@400;600;700;800&display=swap');
+
+  :root {
+    --sky: #87CEEB;
+    --grass: #5DB85D;
+    --path: #D4A96A;
+    --water: #4FC3F7;
+    --school-c: #FF6B6B;
+    --shop-c: #FFB347;
+    --church-c: #CE93D8;
+    --river-c: #29B6F6;
+    --fall-c: #80DEEA;
+    --park-c: #66BB6A;
+    --locked: #9E9E9E;
+    --coin: #FFD700;
+    --bg-card: rgba(255,255,255,0.92);
+    --shadow: 0 8px 32px rgba(0,0,0,0.18);
+    --radius: 20px;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'Nunito', sans-serif;
+    background: #1a1a2e;
+    min-height: 100vh;
+    overflow: hidden;
+  }
+
+  /* ========== SCREEN SYSTEM ========== */
+  .screen { display: none; width: 100vw; height: 100vh; position: relative; overflow: hidden; }
+  .screen.active { display: flex; flex-direction: column; }
+
+  /* ========== GRADE SELECT SCREEN ========== */
+  #grade-screen {
+    background: linear-gradient(160deg, #0f2027, #203a43, #2c5364);
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 0;
+    overflow-y: auto;
+  }
+
+  .grade-header {
+    text-align: center;
+    padding: 28px 20px 16px;
+    flex-shrink: 0;
+  }
+
+  .grade-header h1 {
+    font-family: 'Fredoka One', cursive;
+    font-size: clamp(1.8rem, 6vw, 3rem);
+    color: #fff;
+    text-shadow: 0 4px 12px rgba(0,0,0,0.4);
+    letter-spacing: 1px;
+  }
+
+  .grade-header p {
+    color: rgba(255,255,255,0.7);
+    font-size: 1rem;
+    margin-top: 6px;
+    font-weight: 600;
+  }
+
+  .capibara-mascot {
+    font-size: 4rem;
+    display: block;
+    margin-bottom: 4px;
+    animation: bounce 2s infinite;
+  }
+
+  @keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+  }
+
+  .grades-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 14px;
+    padding: 8px 20px 28px;
+    width: 100%;
+    max-width: 480px;
+  }
+
+  .grade-card {
+    background: var(--bg-card);
+    border-radius: var(--radius);
+    padding: 18px 14px;
+    text-align: center;
+    cursor: pointer;
+    border: 3px solid transparent;
+    transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s;
+    box-shadow: var(--shadow);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .grade-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 5px;
+    background: var(--grade-color);
+  }
+
+  .grade-card:active { transform: scale(0.96); }
+  .grade-card:hover { transform: translateY(-4px); box-shadow: 0 12px 40px rgba(0,0,0,0.3); }
+
+  .grade-card .mascot { font-size: 2.2rem; display: block; margin-bottom: 6px; }
+  .grade-card .grade-name {
+    font-family: 'Fredoka One', cursive;
+    font-size: 1.1rem;
+    color: #333;
+  }
+  .grade-card .grade-scenarios {
+    font-size: 0.72rem;
+    color: #888;
+    margin-top: 3px;
+    font-weight: 700;
+  }
+  .grade-card .progress-bar {
+    height: 6px;
+    background: #eee;
+    border-radius: 3px;
+    margin-top: 8px;
+    overflow: hidden;
+  }
+  .grade-card .progress-fill {
+    height: 100%;
+    background: var(--grade-color);
+    border-radius: 3px;
+    transition: width 0.6s ease;
+  }
+
+  /* ========== MAP SCREEN ========== */
+  #map-screen {
+    background: linear-gradient(180deg, #87CEEB 0%, #B8E4A0 60%, #7BC67E 100%);
+  }
+
+  /* Top HUD */
+  .map-hud {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 16px;
+    background: rgba(255,255,255,0.85);
+    backdrop-filter: blur(8px);
+    box-shadow: 0 2px 12px rgba(0,0,0,0.12);
+    flex-shrink: 0;
+    z-index: 10;
+  }
+
+  .hud-left { display: flex; align-items: center; gap: 10px; }
+  .back-btn {
+    background: #eee;
+    border: none;
+    border-radius: 12px;
+    padding: 8px 14px;
+    font-size: 1rem;
+    cursor: pointer;
+    font-family: 'Nunito', sans-serif;
+    font-weight: 800;
+    color: #555;
+    transition: background 0.2s;
+  }
+  .back-btn:active { background: #ddd; }
+
+  .grade-badge {
+    font-family: 'Fredoka One', cursive;
+    font-size: 1rem;
+    padding: 6px 14px;
+    border-radius: 20px;
+    color: #fff;
+    background: var(--grade-color, #007AFF);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+  }
+
+  .hud-right { display: flex; align-items: center; gap: 10px; }
+
+  .coin-display {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    background: #fff8e1;
+    border: 2px solid var(--coin);
+    border-radius: 20px;
+    padding: 5px 12px;
+    font-family: 'Fredoka One', cursive;
+    font-size: 1rem;
+    color: #e65100;
+  }
+
+  .progress-circle {
+    width: 40px; height: 40px;
+    border-radius: 50%;
+    background: conic-gradient(var(--grade-color, #007AFF) var(--pct), #eee 0);
+    display: flex; align-items: center; justify-content: center;
+    position: relative;
+  }
+  .progress-circle::after {
+    content: '';
+    position: absolute;
+    inset: 5px;
+    background: white;
+    border-radius: 50%;
+  }
+  .progress-circle span {
+    position: relative; z-index: 1;
+    font-size: 0.55rem; font-weight: 800; color: #333;
+  }
+
+  /* Map canvas */
+  .map-canvas {
+    position: relative;
+    flex: 1;
+    overflow: hidden;
+  }
+
+  /* SVG background map */
+  .map-bg-svg {
+    position: absolute;
+    inset: 0;
+    width: 100%; height: 100%;
+  }
+
+  /* Location pins */
+  .location-pin {
+    position: absolute;
+    transform: translate(-50%, -50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    cursor: pointer;
+    z-index: 5;
+    transition: transform 0.15s;
+  }
+
+  .location-pin:active { transform: translate(-50%, -50%) scale(0.9); }
+
+  .pin-bubble {
+    width: 64px; height: 64px;
+    border-radius: 50% 50% 50% 0;
+    transform: rotate(-45deg);
+    display: flex; align-items: center; justify-content: center;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.25);
+    border: 3px solid rgba(255,255,255,0.8);
+    position: relative;
+    transition: box-shadow 0.2s;
+    background: var(--pin-color);
+  }
+
+  .pin-bubble.locked {
+    background: var(--locked) !important;
+    filter: grayscale(1) brightness(0.85);
+  }
+
+  .location-pin:hover .pin-bubble:not(.locked) {
+    box-shadow: 0 10px 30px rgba(0,0,0,0.35);
+    transform: rotate(-45deg) scale(1.08);
+  }
+
+  .pin-emoji {
+    transform: rotate(45deg);
+    font-size: 1.8rem;
+    line-height: 1;
+  }
+
+  .pin-label {
+    margin-top: 6px;
+    background: rgba(255,255,255,0.92);
+    border-radius: 10px;
+    padding: 3px 10px;
+    font-size: 0.68rem;
+    font-weight: 800;
+    color: #333;
+    white-space: nowrap;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+    max-width: 90px;
+    text-align: center;
+  }
+
+  .pin-label.locked-label { color: #999; }
+
+  .lock-icon {
+    position: absolute;
+    top: -4px; right: -4px;
+    font-size: 0.9rem;
+    background: #fff;
+    border-radius: 50%;
+    width: 22px; height: 22px;
+    display: flex; align-items: center; justify-content: center;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+    transform: rotate(45deg);
+  }
+
+  /* Unlock pulse animation */
+  @keyframes unlocked-pulse {
+    0%, 100% { box-shadow: 0 6px 20px rgba(0,0,0,0.25), 0 0 0 0 rgba(255,255,255,0.6); }
+    50% { box-shadow: 0 6px 20px rgba(0,0,0,0.25), 0 0 0 12px rgba(255,255,255,0); }
+  }
+  .pin-bubble.unlocked { animation: unlocked-pulse 2.5s infinite; }
+
+  /* Path lines between locations */
+  .path-line {
+    position: absolute;
+    pointer-events: none;
+    z-index: 2;
+  }
+
+  /* ========== LOCATION MODAL ========== */
+  .modal-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.5);
+    z-index: 100;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s;
+  }
+  .modal-overlay.open { opacity: 1; pointer-events: all; }
+
+  .modal-sheet {
+    background: white;
+    border-radius: 28px 28px 0 0;
+    width: 100%;
+    max-width: 480px;
+    padding: 20px 22px 36px;
+    transform: translateY(100%);
+    transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
+    max-height: 80vh;
+    overflow-y: auto;
+  }
+  .modal-overlay.open .modal-sheet { transform: translateY(0); }
+
+  .modal-handle {
+    width: 40px; height: 5px;
+    background: #ddd; border-radius: 3px;
+    margin: 0 auto 16px;
+  }
+
+  .modal-location-header {
+    display: flex; align-items: center; gap: 14px;
+    margin-bottom: 16px;
+  }
+
+  .modal-pin-icon {
+    width: 60px; height: 60px;
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 2rem;
+    flex-shrink: 0;
+    background: var(--modal-color);
+  }
+
+  .modal-title { font-family: 'Fredoka One', cursive; font-size: 1.4rem; color: #222; }
+  .modal-desc { font-size: 0.85rem; color: #888; margin-top: 2px; font-weight: 600; }
+
+  .scenarios-list { display: flex; flex-direction: column; gap: 10px; }
+
+  .scenario-card {
+    border-radius: 16px;
+    border: 2px solid #eee;
+    padding: 14px 16px;
+    display: flex; align-items: center; gap: 14px;
+    cursor: pointer;
+    transition: border-color 0.2s, background 0.2s, transform 0.15s;
+    background: #fafafa;
+  }
+  .scenario-card:hover { border-color: var(--modal-color); background: #fff; transform: translateX(4px); }
+  .scenario-card:active { transform: scale(0.98); }
+  .scenario-card.completed { background: #f0fff4; border-color: #66BB6A; }
+
+  .scenario-num {
+    width: 36px; height: 36px;
+    border-radius: 50%;
+    background: var(--modal-color);
+    color: white;
+    font-family: 'Fredoka One', cursive;
+    font-size: 1rem;
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0;
+  }
+  .scenario-num.completed-num { background: #66BB6A; }
+
+  .scenario-info { flex: 1; }
+  .scenario-name { font-weight: 800; font-size: 0.9rem; color: #333; }
+  .scenario-themes { font-size: 0.72rem; color: #999; margin-top: 2px; }
+
+  .scenario-status { font-size: 1.2rem; }
+
+  /* ========== ACTIVITY SCREEN ========== */
+  #activity-screen {
+    background: linear-gradient(160deg, #e0f7fa, #f3e5f5);
+    flex-direction: column;
+  }
+
+  .activity-header {
+    display: flex; align-items: center; gap: 12px;
+    padding: 14px 16px;
+    background: rgba(255,255,255,0.85);
+    backdrop-filter: blur(8px);
+    flex-shrink: 0;
+  }
+
+  .activity-title-block { flex: 1; }
+  .activity-title-block h2 {
+    font-family: 'Fredoka One', cursive;
+    font-size: 1.1rem; color: #333;
+  }
+  .activity-title-block p { font-size: 0.75rem; color: #999; font-weight: 700; }
+
+  .activity-body {
+    flex: 1;
+    overflow-y: auto;
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  /* Activity type tabs */
+  .activity-tabs {
+    display: flex;
+    gap: 8px;
+    overflow-x: auto;
+    padding-bottom: 4px;
+    scrollbar-width: none;
+  }
+  .activity-tabs::-webkit-scrollbar { display: none; }
+
+  .activity-tab {
+    flex-shrink: 0;
+    background: white;
+    border: 2px solid #eee;
+    border-radius: 20px;
+    padding: 8px 16px;
+    font-family: 'Nunito', sans-serif;
+    font-size: 0.8rem;
+    font-weight: 800;
+    color: #888;
+    cursor: pointer;
+    display: flex; align-items: center; gap: 6px;
+    transition: all 0.2s;
+  }
+  .activity-tab.active {
+    background: var(--modal-color);
+    border-color: var(--modal-color);
+    color: white;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  }
+
+  /* Activity card */
+  .activity-card {
+    background: white;
+    border-radius: 20px;
+    padding: 22px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+    min-height: 200px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .activity-instruction {
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: #555;
+    background: #f5f5f5;
+    border-radius: 12px;
+    padding: 10px 14px;
+  }
+
+  .vocab-word {
+    font-family: 'Fredoka One', cursive;
+    font-size: 2rem;
+    color: var(--modal-color);
+    text-align: center;
+    padding: 20px;
+    background: linear-gradient(135deg, rgba(255,255,255,0.9), rgba(240,240,255,0.9));
+    border-radius: 16px;
+    border: 3px dashed rgba(0,0,0,0.1);
+    position: relative;
+  }
+
+  .mc-options { display: flex; flex-direction: column; gap: 10px; }
+  .mc-option {
+    background: #f9f9f9;
+    border: 2px solid #eee;
+    border-radius: 14px;
+    padding: 14px 18px;
+    font-weight: 800;
+    font-size: 0.95rem;
+    cursor: pointer;
+    display: flex; align-items: center; gap: 10px;
+    transition: all 0.15s;
+    font-family: 'Nunito', sans-serif;
+    color: #333;
+  }
+  .mc-option:active { transform: scale(0.97); }
+  .mc-option.correct { background: #e8f5e9; border-color: #66BB6A; color: #2e7d32; }
+  .mc-option.wrong { background: #fce4ec; border-color: #ef9a9a; color: #c62828; }
+
+  .write-input {
+    border: 3px solid #eee;
+    border-radius: 14px;
+    padding: 14px 16px;
+    font-size: 1.1rem;
+    font-family: 'Nunito', sans-serif;
+    font-weight: 700;
+    width: 100%;
+    outline: none;
+    transition: border-color 0.2s;
+    color: #333;
+  }
+  .write-input:focus { border-color: var(--modal-color); }
+
+  .check-btn {
+    background: var(--modal-color);
+    color: white;
+    border: none;
+    border-radius: 14px;
+    padding: 14px;
+    font-family: 'Fredoka One', cursive;
+    font-size: 1.1rem;
+    cursor: pointer;
+    width: 100%;
+    transition: transform 0.15s, box-shadow 0.15s;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  }
+  .check-btn:active { transform: scale(0.97); }
+
+  /* Feedback banner */
+  .feedback-banner {
+    border-radius: 14px;
+    padding: 14px;
+    text-align: center;
+    font-family: 'Fredoka One', cursive;
+    font-size: 1.1rem;
+    opacity: 0;
+    transform: translateY(10px);
+    transition: all 0.3s;
+    pointer-events: none;
+  }
+  .feedback-banner.show {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: all;
+  }
+  .feedback-banner.correct-fb { background: #e8f5e9; color: #2e7d32; }
+  .feedback-banner.wrong-fb { background: #fce4ec; color: #c62828; }
+
+  /* Coin reward pop */
+  @keyframes coin-pop {
+    0% { opacity: 0; transform: translate(-50%, -50%) scale(0.5); }
+    60% { opacity: 1; transform: translate(-50%, -80%) scale(1.2); }
+    100% { opacity: 0; transform: translate(-50%, -120%) scale(1); }
+  }
+  .coin-pop {
+    position: fixed;
+    font-family: 'Fredoka One', cursive;
+    font-size: 1.4rem;
+    color: #e65100;
+    background: #FFD700;
+    border-radius: 20px;
+    padding: 8px 16px;
+    pointer-events: none;
+    z-index: 999;
+    animation: coin-pop 1.2s forwards;
+  }
+
+  /* ========== TOAST ========== */
+  .toast {
+    position: fixed;
+    bottom: 24px; left: 50%;
+    transform: translateX(-50%) translateY(80px);
+    background: #333;
+    color: white;
+    border-radius: 20px;
+    padding: 12px 24px;
+    font-weight: 800;
+    font-size: 0.9rem;
+    z-index: 999;
+    transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+    white-space: nowrap;
+  }
+  .toast.show { transform: translateX(-50%) translateY(0); }
+
+  /* ========== CLOUDS & DECORATIONS ========== */
+  .cloud {
+    position: absolute;
+    background: white;
+    border-radius: 50px;
+    opacity: 0.8;
+    pointer-events: none;
+  }
+  .cloud::before, .cloud::after {
+    content: '';
+    position: absolute;
+    background: white;
+    border-radius: 50%;
+  }
+
+  @keyframes float-cloud {
+    0% { transform: translateX(-120%); }
+    100% { transform: translateX(110vw); }
+  }
+
+
+  /* ========== AUDIO CONTROLS ========== */
+  .music-btn {
+    background: rgba(255,255,255,0.2);
+    border: 2px solid rgba(255,255,255,0.4);
+    border-radius: 50%;
+    width: 36px; height: 36px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    display: flex; align-items: center; justify-content: center;
+    transition: background 0.2s, transform 0.15s;
+    flex-shrink: 0;
+  }
+  .music-btn:active { transform: scale(0.9); }
+  .music-btn.muted { opacity: 0.5; }
+  .speak-btn {
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    color: white;
+    border: none;
+    border-radius: 14px;
+    padding: 10px 20px;
+    font-family: 'Nunito', sans-serif;
+    font-weight: 800;
+    font-size: 0.9rem;
+    cursor: pointer;
+    display: flex; align-items: center; gap: 8px;
+    transition: transform 0.15s, box-shadow 0.15s;
+    box-shadow: 0 4px 14px rgba(102,126,234,0.4);
+    align-self: center;
+  }
+  .speak-btn:active { transform: scale(0.96); }
+  .listening-prompt {
+    background: linear-gradient(135deg, #e0f2fe, #bae6fd);
+    border-radius: 16px;
+    padding: 18px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+  }
+  @keyframes soundwave {
+    0%, 100% { transform: scaleY(1); }
+    50% { transform: scaleY(2.2); }
+  }
+  .soundwave-bars {
+    display: flex; gap: 4px; align-items: center; height: 24px;
+  }
+  .soundwave-bars span {
+    width: 4px; background: #0369a1; border-radius: 2px; height: 100%;
+    transform-origin: bottom;
+  }
+  .soundwave-bars.playing span:nth-child(1) { animation: soundwave 0.6s 0.0s infinite; }
+  .soundwave-bars.playing span:nth-child(2) { animation: soundwave 0.6s 0.15s infinite; }
+  .soundwave-bars.playing span:nth-child(3) { animation: soundwave 0.6s 0.3s infinite; }
+  .soundwave-bars.playing span:nth-child(4) { animation: soundwave 0.6s 0.45s infinite; }
+  .soundwave-bars.playing span:nth-child(5) { animation: soundwave 0.6s 0.2s infinite; }
+
+  @keyframes shimmer {
+    0%, 100% { opacity: 0.6; }
+    50% { opacity: 1; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ========== GRADE SELECT SCREEN ========== -->
+<div id="grade-screen" class="screen active">
+  <div class="grade-header">
+    <span class="capibara-mascot">🦦</span>
+    <h1>Barrigón Adventure</h1>
+    <p>Choose your grade to start!</p>
+  </div>
+  <div class="grades-grid" id="grades-grid"></div>
+</div>
+
+<!-- ========== MAP SCREEN ========== -->
+<div id="map-screen" class="screen">
+  <!-- Animated clouds -->
+  <div id="clouds-container"></div>
+
+  <!-- HUD -->
+  <div class="map-hud">
+    <div class="hud-left">
+      <button class="back-btn" onclick="goToGradeSelect()">← Grades</button>
+      <div class="grade-badge" id="hud-grade-badge">Grade 4</div>
+    </div>
+    <div class="hud-right">
+      <button class="music-btn" id="music-btn" onclick="toggleMusic()" title="Toggle music">ðµ</button>
+      <div class="coin-display">🪙 <span id="coin-count">0</span></div>
+      <div class="progress-circle" id="progress-circle" style="--pct: 0%">
+        <span id="progress-pct">0%</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Map Canvas -->
+  <div class="map-canvas" id="map-canvas">
+    <!-- SVG background paths drawn dynamically -->
+    <svg class="map-bg-svg" id="map-svg" viewBox="0 0 100 100" preserveAspectRatio="none">
+      <!-- Sky gradient -->
+      <defs>
+        <linearGradient id="skyGrad" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%" stop-color="#87CEEB"/>
+          <stop offset="60%" stop-color="#B8E4A0"/>
+          <stop offset="100%" stop-color="#7BC67E"/>
+        </linearGradient>
+        <linearGradient id="waterGrad" x1="0" y1="0" x2="1" y2="0">
+          <stop offset="0%" stop-color="#4FC3F7"/>
+          <stop offset="100%" stop-color="#29B6F6"/>
+        </linearGradient>
+        <filter id="blur">
+          <feGaussianBlur stdDeviation="0.5"/>
+        </filter>
+      </defs>
+
+      <!-- Background -->
+      <rect width="100" height="100" fill="url(#skyGrad)"/>
+
+      <!-- River -->
+      <path d="M 60 35 Q 50 42 55 50 Q 60 58 50 65" stroke="url(#waterGrad)" stroke-width="3.5" fill="none" stroke-linecap="round" opacity="0.7"/>
+      <path d="M 60 35 Q 51 43 56 51 Q 61 59 51 66" stroke="white" stroke-width="0.8" fill="none" stroke-linecap="round" opacity="0.5"/>
+
+      <!-- Forest/trees -->
+      <circle cx="15" cy="18" r="8" fill="#5CB85C" opacity="0.6"/>
+      <circle cx="22" cy="14" r="6" fill="#4CAF50" opacity="0.6"/>
+      <circle cx="80" cy="20" r="7" fill="#388E3C" opacity="0.5"/>
+      <circle cx="88" cy="25" r="5" fill="#43A047" opacity="0.5"/>
+
+      <!-- Dirt paths connecting locations -->
+      <!-- School → Shops -->
+      <path d="M 42 72 Q 52 65 62 58" stroke="#D4A96A" stroke-width="2" fill="none" stroke-dasharray="3,2" stroke-linecap="round" opacity="0.8"/>
+      <!-- School → Church -->
+      <path d="M 42 72 Q 35 65 28 50" stroke="#D4A96A" stroke-width="2" fill="none" stroke-dasharray="3,2" stroke-linecap="round" opacity="0.8"/>
+      <!-- Shops → River -->
+      <path d="M 62 58 Q 60 48 55 38" stroke="#D4A96A" stroke-width="2" fill="none" stroke-dasharray="3,2" stroke-linecap="round" opacity="0.8"/>
+      <!-- River → Waterfall -->
+      <path d="M 55 38 Q 46 30 38 24" stroke="#D4A96A" stroke-width="2" fill="none" stroke-dasharray="3,2" stroke-linecap="round" opacity="0.8"/>
+      <!-- Waterfall → Park -->
+      <path d="M 38 24 Q 44 16 50 10" stroke="#D4A96A" stroke-width="2" fill="none" stroke-dasharray="3,2" stroke-linecap="round" opacity="0.8"/>
+
+      <!-- Little houses/details -->
+      <rect x="70" y="70" width="4" height="3" fill="#FF8A65" opacity="0.4" rx="0.5"/>
+      <rect x="20" y="75" width="4" height="3" fill="#FF8A65" opacity="0.4" rx="0.5"/>
+    </svg>
+
+    <!-- Location pins rendered by JS -->
+    <div id="pins-container"></div>
+  </div>
+
+  <!-- Location Modal -->
+  <div class="modal-overlay" id="modal-overlay" onclick="closeModal(event)">
+    <div class="modal-sheet" id="modal-sheet">
+      <div class="modal-handle"></div>
+      <div class="modal-location-header">
+        <div class="modal-pin-icon" id="modal-icon"></div>
+        <div>
+          <div class="modal-title" id="modal-title"></div>
+          <div class="modal-desc" id="modal-desc"></div>
+        </div>
+      </div>
+      <div class="scenarios-list" id="scenarios-list"></div>
+    </div>
+  </div>
+</div>
+
+<!-- ========== ACTIVITY SCREEN ========== -->
+<div id="activity-screen" class="screen">
+  <div class="activity-header">
+    <button class="back-btn" onclick="goToMap()">← Map</button>
+    <div class="activity-title-block">
+      <h2 id="act-scenario-title"></h2>
+      <p id="act-theme-name"></p>
+    </div>
+  </div>
+  <div class="activity-body">
+    <div class="activity-tabs" id="activity-tabs"></div>
+    <div class="activity-card" id="activity-card"></div>
+  </div>
+</div>
+
+<!-- Toast notification -->
+<div class="toast" id="toast"></div>
+
+<script>
+// ==========================================
+// BARRIGÓN ADVENTURE — ENGINE v2.0
+// JSON-based dynamic content loader
+// ==========================================
+
+// ── Grade registry (no content here — loaded from /data/gradeX.json) ─────
+const GRADE_REGISTRY = {
+  PreK:   { key: "PreK",   file: "gradeprek", label: "Pre-Kinder", color: "#FF6B9D", mascot: "🐣" },
+  Kinder: { key: "Kinder", file: "gradek",    label: "Kinder",     color: "#FF9500", mascot: "🐥" },
+  G1:     { key: "G1",     file: "grade1",    label: "Grade 1",    color: "#34C759", mascot: "🐸" },
+  G2:     { key: "G2",     file: "grade2",    label: "Grade 2",    color: "#5856D6", mascot: "🦋" },
+  G3:     { key: "G3",     file: "grade3",    label: "Grade 3",    color: "#FF3B30", mascot: "🦜" },
+  G4:     { key: "G4",     file: "grade4",    label: "Grade 4",    color: "#007AFF", mascot: "🦦" },
+  G5:     { key: "G5",     file: "grade5",    label: "Grade 5",    color: "#30B0C7", mascot: "🦅" },
+  G6:     { key: "G6",     file: "grade6",    label: "Grade 6",    color: "#AF52DE", mascot: "🦁" },
+};
+
+const MAP_LOCATIONS = [
+  { id: "school",    name: "The School",          emoji: "🏫", color: "#FF6B6B", desc: "Your adventure starts here!",      pos: { top: "72%", left: "42%" } },
+  { id: "shops",     name: "The Shops",           emoji: "🛒", color: "#FFB347", desc: "Explore the local market!",        pos: { top: "58%", left: "62%" } },
+  { id: "church",    name: "The Church",          emoji: "⛪", color: "#CE93D8", desc: "The heart of the community.",      pos: { top: "50%", left: "28%" } },
+  { id: "river",     name: "The River",           emoji: "🌊", color: "#29B6F6", desc: "Cool waters of El Harino.",        pos: { top: "38%", left: "55%" } },
+  { id: "waterfall", name: "Las Yayas Waterfall", emoji: "💧", color: "#80DEEA", desc: "A magical waterfall!",             pos: { top: "24%", left: "38%" } },
+  { id: "park",      name: "Omar Torrijos Park",  emoji: "🌳", color: "#66BB6A", desc: "The final level — national park!", pos: { top: "10%", left: "50%" } },
+];
+
+const ACTIVITY_TYPES = [
+  { id: "listening", label: "Listening", emoji: "🎧" },
+  { id: "reading",   label: "Reading",   emoji: "📖" },
+  { id: "writing",   label: "Writing",   emoji: "✏️" },
+  { id: "speaking",  label: "Speaking",  emoji: "🗣️" },
+  { id: "mediation", label: "Mediation", emoji: "🌐" },
+];
+
+const FALLBACK_ACTIVITY = {
+  listening: { instruction: "🎧 Listen and choose!", type: "mc", ttsText: "This activity is coming soon!", prompt: "Coming soon! 🚧", options: ["A", "B", "C", "D"], answer: 0, feedback: "Great!" },
+  reading:   { instruction: "📖 Read and choose!", type: "mc", prompt: "Coming soon! 🚧", options: ["A", "B", "C", "D"], answer: 0, feedback: "Great!" },
+  writing:   { instruction: "✏️ Write the answer!", type: "write", prompt: "Coming soon! 🚧", answer: "a", hint: "Check back soon!", feedback: "Great!" },
+  speaking:  { instruction: "🗣️ Say it out loud!", type: "speak", prompt: "Coming soon!", ttsText: "Coming soon!", image: "🚧", caption: "Coming soon", feedback: "Great!" },
+  mediation: { instruction: "🌐 Help your friend!", type: "mc", prompt: "Coming soon! 🚧", options: ["A", "B", "C", "D"], answer: 0, feedback: "Great!" },
+};
+
+// ── State ─────────────────────────────────────────────────────────────────
+let state = {
+  currentGradeKey: null,
+  currentGradeData: null,       // loaded JSON
+  coins: 0,
+  completedThemes: [],
+  currentScenario: null,
+  currentThemeIndex: null,
+  currentActivity: "listening",
+};
+
+// ── JSON Loader ───────────────────────────────────────────────────────────
+const gradeCache = {};
+
+async function loadGradeData(gradeKey) {
+  if (gradeCache[gradeKey]) return gradeCache[gradeKey];
+  const reg = GRADE_REGISTRY[gradeKey];
+  try {
+    const res = await fetch(`/data/${reg.file}.json`);
+    if (!res.ok) throw new Error("Not found");
+    const data = await res.json();
+    gradeCache[gradeKey] = data;
+    return data;
+  } catch(e) {
+    console.warn("Could not load grade data:", gradeKey, e);
+    return null;
+  }
+}
+
+function getActivity(themeObj, activityType) {
+  if (themeObj && themeObj.activities && themeObj.activities[activityType]) {
+    const act = themeObj.activities[activityType];
+    // Only return if it has real content (not empty {})
+    if (act.instruction) return act;
+  }
+  return FALLBACK_ACTIVITY[activityType];
+}
+
+// ── Progress helpers ──────────────────────────────────────────────────────
+function getUnlockedLocations() {
+  if (!state.currentGradeData) return ["school"];
+  const unlocked = new Set(["school"]);
+  state.currentGradeData.scenarios.forEach(s => {
+    s.themes.forEach((t, ti) => {
+      const key = `${state.currentGradeKey}-${s.id}-${ti}`;
+      if (state.completedThemes.includes(key)) unlocked.add(s.location);
+    });
+  });
+  return Array.from(unlocked);
+}
+
+function getProgress() {
+  if (!state.currentGradeData) return 0;
+  const total = state.currentGradeData.scenarios.reduce((a, s) => a + s.themes.length, 0);
+  const done = state.completedThemes.filter(k => k.startsWith(state.currentGradeKey + "-")).length;
+  return total ? Math.round((done / total) * 100) : 0;
+}
+
+// ==========================================
+// AUDIO ENGINE
+// ==========================================
+const synth = window.speechSynthesis;
+let ttsVoice = null;
+
+function loadVoices() {
+  const voices = synth.getVoices();
+  ttsVoice =
+    voices.find(v => v.lang === "en-US" && /female|samantha|karen|victoria|zira/i.test(v.name)) ||
+    voices.find(v => v.lang === "en-US") ||
+    voices.find(v => v.lang.startsWith("en")) ||
+    voices[0] || null;
+}
+loadVoices();
+if (synth.onvoiceschanged !== undefined) synth.onvoiceschanged = loadVoices;
+
+function speak(text, rate, onEnd) {
+  if (!text) return;
+  rate = rate || 0.85;
+  synth.cancel();
+  const utt = new SpeechSynthesisUtterance(text);
+  utt.voice = ttsVoice;
+  utt.lang  = "en-US";
+  utt.rate  = rate;
+  utt.pitch = 1.1;
+  utt.volume = 1;
+  if (onEnd) utt.onend = onEnd;
+  synth.speak(utt);
+}
+
+let audioCtx = null, musicGain = null, musicNodes = [], musicMuted = false;
+
+function getAudioCtx() {
+  if (!audioCtx) {
+    audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+    musicGain = audioCtx.createGain();
+    musicGain.gain.value = 0.15;
+    musicGain.connect(audioCtx.destination);
+  }
+  return audioCtx;
+}
+
+function playSfx(type) {
+  try {
+    const ctx = getAudioCtx();
+    const osc = ctx.createOscillator();
+    const gain = ctx.createGain();
+    osc.connect(gain); gain.connect(ctx.destination);
+    const t = ctx.currentTime;
+    if (type === "correct") {
+      osc.type = "sine";
+      osc.frequency.setValueAtTime(523, t); osc.frequency.setValueAtTime(659, t+0.12); osc.frequency.setValueAtTime(784, t+0.24);
+      gain.gain.setValueAtTime(0.35, t); gain.gain.exponentialRampToValueAtTime(0.001, t+0.55);
+      osc.start(t); osc.stop(t+0.55);
+    } else if (type === "wrong") {
+      osc.type = "sawtooth";
+      osc.frequency.setValueAtTime(220, t); osc.frequency.setValueAtTime(180, t+0.15);
+      gain.gain.setValueAtTime(0.2, t); gain.gain.exponentialRampToValueAtTime(0.001, t+0.3);
+      osc.start(t); osc.stop(t+0.3);
+    } else if (type === "coin") {
+      osc.type = "triangle";
+      osc.frequency.setValueAtTime(988, t); osc.frequency.setValueAtTime(1319, t+0.08);
+      gain.gain.setValueAtTime(0.3, t); gain.gain.exponentialRampToValueAtTime(0.001, t+0.4);
+      osc.start(t); osc.stop(t+0.4);
+    } else if (type === "unlock") {
+      osc.type = "sine";
+      osc.frequency.setValueAtTime(392, t); osc.frequency.setValueAtTime(523, t+0.1);
+      osc.frequency.setValueAtTime(659, t+0.2); osc.frequency.setValueAtTime(784, t+0.3);
+      gain.gain.setValueAtTime(0.35, t); gain.gain.exponentialRampToValueAtTime(0.001, t+0.7);
+      osc.start(t); osc.stop(t+0.7);
+    } else if (type === "tap") {
+      osc.type = "sine"; osc.frequency.setValueAtTime(440, t);
+      gain.gain.setValueAtTime(0.1, t); gain.gain.exponentialRampToValueAtTime(0.001, t+0.08);
+      osc.start(t); osc.stop(t+0.08);
+    }
+  } catch(e) {}
+}
+
+function startMusic() {
+  try {
+    const ctx = getAudioCtx();
+    if (ctx.state === "suspended") ctx.resume();
+    stopMusic();
+    const melody = [{n:523,d:0.4},{n:587,d:0.4},{n:659,d:0.4},{n:523,d:0.4},{n:659,d:0.4},{n:698,d:0.4},{n:784,d:0.8},{n:784,d:0.4},{n:659,d:0.4},{n:698,d:0.4},{n:659,d:0.4},{n:587,d:0.4},{n:523,d:0.8}];
+    const loopDur = melody.reduce((a,x) => a+x.d, 0);
+    function playLoop(start) {
+      let t = start;
+      melody.forEach(function(m) {
+        const osc = ctx.createOscillator(), env = ctx.createGain();
+        osc.connect(env); env.connect(musicGain);
+        osc.type = "triangle"; osc.frequency.value = m.n;
+        env.gain.setValueAtTime(0, t); env.gain.linearRampToValueAtTime(1, t+0.02);
+        env.gain.setValueAtTime(1, t+m.d-0.05); env.gain.linearRampToValueAtTime(0, t+m.d);
+        osc.start(t); osc.stop(t+m.d);
+        musicNodes.push(osc); t += m.d;
+      });
+      var timer = setTimeout(function(){ if(!musicMuted) playLoop(ctx.currentTime); }, loopDur*1000-80);
+      musicNodes.push({stop: function(){ clearTimeout(timer); }});
+    }
+    if (!musicMuted) playLoop(ctx.currentTime);
+  } catch(e) {}
+}
+
+function stopMusic() {
+  musicNodes.forEach(function(n){ try{ n.stop(); }catch(e){} });
+  musicNodes = [];
+}
+
+function toggleMusic() {
+  const btn = document.getElementById("music-btn");
+  musicMuted = !musicMuted;
+  if (musicMuted) { stopMusic(); btn.textContent = "🔇"; btn.classList.add("muted"); }
+  else { btn.textContent = "🎵"; btn.classList.remove("muted"); startMusic(); }
+}
+
+document.addEventListener("click", function() {
+  const ctx = getAudioCtx();
+  if (ctx.state === "suspended") ctx.resume();
+  if (!musicMuted && musicNodes.length === 0) startMusic();
+}, { once: true });
+
+// ==========================================
+// GRADE SELECT
+// ==========================================
+function renderGradeSelect() {
+  const grid = document.getElementById("grades-grid");
+  grid.innerHTML = "";
+  Object.entries(GRADE_REGISTRY).forEach(([key, reg]) => {
+    const done = state.completedThemes.filter(k => k.startsWith(key+"-")).length;
+    const card = document.createElement("div");
+    card.className = "grade-card";
+    card.style.setProperty("--grade-color", reg.color);
+    card.innerHTML = `
+      <span class="mascot">${reg.mascot}</span>
+      <div class="grade-name">${reg.label}</div>
+      <div class="grade-scenarios">8 scenarios · 16 missions</div>
+      <div class="progress-bar"><div class="progress-fill" style="width:${done>0?'15':'0'}%;background:${reg.color}"></div></div>
+    `;
+    card.addEventListener("click", () => selectGrade(key));
+    grid.appendChild(card);
+  });
+}
+
+async function selectGrade(gradeKey) {
+  showScreen("map-screen");
+  document.getElementById("pins-container").innerHTML = '<div style="text-align:center;padding:40px;color:#999;font-weight:800">Loading... 🗺️</div>';
+
+  const data = await loadGradeData(gradeKey);
+  state.currentGradeKey = gradeKey;
+  state.currentGradeData = data;
+
+  renderMap();
+  createClouds();
+}
+
+function goToGradeSelect() {
+  showScreen("grade-screen");
+  renderGradeSelect();
+}
+
+// ==========================================
+// MAP
+// ==========================================
+function renderMap() {
+  const reg = GRADE_REGISTRY[state.currentGradeKey];
+  const unlocked = getUnlockedLocations();
+  const pct = getProgress();
+
+  document.getElementById("hud-grade-badge").textContent = reg.label;
+  document.getElementById("hud-grade-badge").style.background = reg.color;
+  document.getElementById("coin-count").textContent = state.coins;
+  document.getElementById("progress-pct").textContent = pct + "%";
+  document.getElementById("progress-circle").style.background =
+    `conic-gradient(${reg.color} ${pct*3.6}deg, #eee 0)`;
+
+  const container = document.getElementById("pins-container");
+  container.innerHTML = "";
+
+  MAP_LOCATIONS.forEach(loc => {
+    const isUnlocked = unlocked.includes(loc.id);
+    const pin = document.createElement("div");
+    pin.className = "location-pin";
+    pin.style.top = loc.pos.top;
+    pin.style.left = loc.pos.left;
+    pin.innerHTML = `
+      <div class="pin-bubble ${isUnlocked ? "unlocked" : "locked"}"
+           style="background:${isUnlocked ? loc.color : "#9E9E9E"}">
+        <span class="pin-emoji">${loc.emoji}</span>
+        ${!isUnlocked ? '<div class="lock-icon">🔒</div>' : ""}
+      </div>
+      <div class="pin-label ${!isUnlocked ? "locked-label" : ""}">${loc.name}</div>
+    `;
+    if (isUnlocked) {
+      pin.addEventListener("click", () => { playSfx("tap"); openLocationModal(loc); });
+    } else {
+      pin.addEventListener("click", () => showToast("🔒 Complete previous missions to unlock!"));
+    }
+    container.appendChild(pin);
+  });
+}
+
+// ==========================================
+// CLOUDS
+// ==========================================
+function createClouds() {
+  const container = document.getElementById("clouds-container");
+  container.innerHTML = "";
+  for (let i = 0; i < 4; i++) {
+    const cloud = document.createElement("div");
+    const size = 40 + Math.random() * 60;
+    const top = 2 + Math.random() * 25;
+    const duration = 25 + Math.random() * 30;
+    const delay = Math.random() * -20;
+    cloud.style.cssText = `position:absolute;top:${top}%;width:${size}px;height:${size*0.4}px;background:white;border-radius:50px;opacity:${0.5+Math.random()*0.4};pointer-events:none;animation:float-cloud ${duration}s ${delay}s linear infinite;z-index:1;`;
+    const b1 = document.createElement("div");
+    b1.style.cssText = "position:absolute;top:-40%;left:15%;width:45%;height:140%;background:white;border-radius:50%;";
+    const b2 = document.createElement("div");
+    b2.style.cssText = "position:absolute;top:-25%;left:45%;width:35%;height:120%;background:white;border-radius:50%;";
+    cloud.appendChild(b1); cloud.appendChild(b2);
+    container.appendChild(cloud);
+  }
+}
+
+// ==========================================
+// MODAL
+// ==========================================
+function openLocationModal(loc) {
+  const data = state.currentGradeData;
+  const scenarios = data ? data.scenarios.filter(s => s.location === loc.id) : [];
+
+  document.getElementById("modal-icon").textContent = loc.emoji;
+  document.getElementById("modal-icon").style.background = loc.color + "33";
+  document.getElementById("modal-title").textContent = loc.name;
+  document.getElementById("modal-desc").textContent = loc.desc;
+  document.getElementById("modal-sheet").style.setProperty("--modal-color", loc.color);
+
+  const list = document.getElementById("scenarios-list");
+  list.innerHTML = "";
+
+  if (scenarios.length === 0) {
+    const reg = GRADE_REGISTRY[state.currentGradeKey];
+    list.innerHTML = `<p style="text-align:center;color:#999;font-weight:700;padding:20px">No scenarios here yet for ${reg.label}!</p>`;
+  } else {
+    scenarios.forEach(s => {
+      s.themes.forEach((theme, ti) => {
+        const key = `${state.currentGradeKey}-${s.id}-${ti}`;
+        const done = state.completedThemes.includes(key);
+        const hasContent = theme.activities && theme.activities.listening && theme.activities.listening.instruction;
+        const card = document.createElement("div");
+        card.className = `scenario-card ${done ? "completed" : ""}`;
+        card.innerHTML = `
+          <div class="scenario-num ${done ? "completed-num" : ""}" style="${!done ? "background:"+loc.color : ""}">
+            ${s.id}.${ti+1}
+          </div>
+          <div class="scenario-info">
+            <div class="scenario-name">${s.title}</div>
+            <div class="scenario-themes">Mission ${ti+1}: ${theme.title}</div>
+          </div>
+          <div class="scenario-status">${done ? "✅" : hasContent ? "▶️" : "🚧"}</div>
+        `;
+        card.addEventListener("click", () => {
+          playSfx("tap");
+          closeModal();
+          openActivity(s, theme, ti, loc.color);
+        });
+        list.appendChild(card);
+      });
+    });
+  }
+  document.getElementById("modal-overlay").classList.add("open");
+}
+
+function closeModal(e) {
+  if (!e || e.target === document.getElementById("modal-overlay")) {
+    document.getElementById("modal-overlay").classList.remove("open");
+  }
+}
+
+// ==========================================
+// ACTIVITY SCREEN
+// ==========================================
+function openActivity(scenario, themeObj, themeIndex, color) {
+  state.currentScenario = scenario;
+  state.currentThemeObj = themeObj;
+  state.currentThemeIndex = themeIndex;
+  state.currentActivity = "listening";
+
+  document.getElementById("act-scenario-title").textContent = scenario.title;
+  document.getElementById("act-theme-name").textContent = `Mission ${themeIndex+1}: ${themeObj.title}`;
+  document.getElementById("activity-screen").style.setProperty("--modal-color", color);
+
+  showScreen("activity-screen");
+  renderActivityTabs();
+  renderActivity();
+}
+
+function renderActivityTabs() {
+  const tabs = document.getElementById("activity-tabs");
+  tabs.innerHTML = "";
+  ACTIVITY_TYPES.forEach(at => {
+    const tab = document.createElement("button");
+    tab.className = `activity-tab ${state.currentActivity === at.id ? "active" : ""}`;
+    tab.innerHTML = `${at.emoji} ${at.label}`;
+    tab.addEventListener("click", () => {
+      state.currentActivity = at.id;
+      renderActivityTabs();
+      renderActivity();
+    });
+    tabs.appendChild(tab);
+  });
+}
+
+function renderActivity() {
+  const card = document.getElementById("activity-card");
+  const act = getActivity(state.currentThemeObj, state.currentActivity);
+  const color = getComputedStyle(document.getElementById("activity-screen")).getPropertyValue("--modal-color").trim();
+  card.innerHTML = "";
+
+  // Instruction
+  const instr = document.createElement("div");
+  instr.className = "activity-instruction";
+  instr.textContent = act.instruction;
+  card.appendChild(instr);
+
+  // Reading story block
+  if (state.currentActivity === "reading" && act.story) {
+    const storyBox = document.createElement("div");
+    storyBox.style.cssText = "background:#f0f9ff;border-radius:16px;padding:16px;font-size:1rem;font-weight:700;color:#0369a1;line-height:1.8;white-space:pre-line;border:2px solid #bae6fd;";
+    storyBox.textContent = act.story;
+    card.appendChild(storyBox);
+    if (act.question) {
+      const q = document.createElement("div");
+      q.style.cssText = "font-weight:800;font-size:1rem;color:#333;margin-top:6px;text-align:center;";
+      q.textContent = "❓ " + act.question;
+      card.appendChild(q);
+    }
+  } else {
+    // Main prompt
+    const word = document.createElement("div");
+    word.className = "vocab-word";
+    word.style.whiteSpace = "pre-line";
+    if (state.currentActivity === "speaking" && act.image) {
+      word.innerHTML = `<div style="font-size:3rem;margin-bottom:8px">${act.image}</div>
+                        <div style="font-size:0.9rem;color:#888;font-weight:700">${act.caption||""}</div>
+                        <div style="font-size:1rem;margin-top:10px;color:#333;font-weight:700">${act.prompt}</div>`;
+    } else {
+      word.textContent = act.prompt;
+    }
+    card.appendChild(word);
+  }
+
+  // Listening: auto-speak + soundwave + replay
+  if (state.currentActivity === "listening") {
+    const ttsStr = act.ttsText || act.prompt || "";
+    setTimeout(function(){ speak(ttsStr, 0.78); }, 400);
+    const listenBox = document.createElement("div");
+    listenBox.className = "listening-prompt";
+    const bars = document.createElement("div");
+    bars.className = "soundwave-bars";
+    bars.innerHTML = "<span></span><span></span><span></span><span></span><span></span>";
+    setTimeout(function(){ bars.classList.add("playing"); }, 400);
+    setTimeout(function(){ bars.classList.remove("playing"); }, 3800);
+    const replayBtn = document.createElement("button");
+    replayBtn.className = "speak-btn";
+    replayBtn.innerHTML = "🔊 Hear it again";
+    replayBtn.addEventListener("click", function(){
+      playSfx("tap");
+      bars.classList.add("playing");
+      speak(ttsStr, 0.78, function(){ bars.classList.remove("playing"); });
+    });
+    listenBox.appendChild(bars);
+    listenBox.appendChild(replayBtn);
+    card.appendChild(listenBox);
+  }
+
+  // Multiple choice
+  if (act.type === "mc") {
+    const opts = document.createElement("div");
+    opts.className = "mc-options";
+    act.options.forEach((opt, i) => {
+      const btn = document.createElement("button");
+      btn.className = "mc-option";
+      btn.innerHTML = `<span>${String.fromCharCode(65+i)}</span> ${opt}`;
+      btn.addEventListener("click", () => {
+        if (i === act.answer) {
+          btn.classList.add("correct");
+          showFeedback(card, true, act.feedback || "");
+          earnCoins(5);
+          setTimeout(() => markThemeDone(), 1200);
+        } else {
+          btn.classList.add("wrong");
+          showFeedback(card, false);
+        }
+      });
+      opts.appendChild(btn);
+    });
+    card.appendChild(opts);
+
+  } else if (act.type === "write") {
+    if (act.hint) {
+      const hint = document.createElement("div");
+      hint.style.cssText = "font-size:0.8rem;color:#aaa;font-weight:700;text-align:center;";
+      hint.textContent = "Hint: " + act.hint;
+      card.appendChild(hint);
+    }
+    const input = document.createElement("input");
+    input.className = "write-input";
+    input.placeholder = "Type your answer...";
+    card.appendChild(input);
+    const btn = document.createElement("button");
+    btn.className = "check-btn";
+    btn.textContent = "Check ✓";
+    btn.addEventListener("click", () => {
+      if (input.value.toLowerCase().trim().includes(act.answer)) {
+        showFeedback(card, true, act.feedback || "");
+        earnCoins(10);
+        setTimeout(() => markThemeDone(), 1200);
+      } else {
+        showFeedback(card, false);
+      }
+    });
+    card.appendChild(btn);
+
+  } else if (act.type === "speak") {
+    const hearBtn = document.createElement("button");
+    hearBtn.className = "speak-btn";
+    hearBtn.style.marginBottom = "10px";
+    hearBtn.innerHTML = "🔊 Hear the model sentence";
+    hearBtn.addEventListener("click", function(){
+      playSfx("tap");
+      speak(act.ttsText || act.prompt || "", 0.82);
+    });
+    card.appendChild(hearBtn);
+    const btn = document.createElement("button");
+    btn.className = "check-btn";
+    btn.textContent = "🎤 I said it!";
+    btn.addEventListener("click", () => {
+      showFeedback(card, true, act.feedback || "Great speaking! 🌟");
+      earnCoins(8);
+      setTimeout(() => markThemeDone(), 1200);
+    });
+    card.appendChild(btn);
+  }
+
+  // Feedback banner
+  const fb = document.createElement("div");
+  fb.className = "feedback-banner";
+  fb.id = "feedback-banner";
+  card.appendChild(fb);
+}
+
+function showFeedback(card, correct, msg) {
+  const fb = document.getElementById("feedback-banner");
+  if (!fb) return;
+  fb.className = `feedback-banner show ${correct ? "correct-fb" : "wrong-fb"}`;
+  fb.textContent = msg || (correct ? "🎉 Excellent!" : "👀 Try again!");
+  playSfx(correct ? "correct" : "wrong");
+  if (correct) speak(msg ? msg.replace(/[🎉🌟⛪🌊💧🌳🏫🛒]/g,"").trim() : "Excellent! Well done!");
+}
+
+function earnCoins(amount) {
+  state.coins += amount;
+  document.getElementById("coin-count").textContent = state.coins;
+  playSfx("coin");
+  const pop = document.createElement("div");
+  pop.className = "coin-pop";
+  pop.textContent = `+${amount} 🪙`;
+  pop.style.left = "50%"; pop.style.top = "60%";
+  document.body.appendChild(pop);
+  setTimeout(() => pop.remove(), 1300);
+}
+
+function markThemeDone() {
+  const key = `${state.currentGradeKey}-${state.currentScenario.id}-${state.currentThemeIndex}`;
+  if (!state.completedThemes.includes(key)) {
+    state.completedThemes.push(key);
+    showToast("✅ Mission complete!");
+    playSfx("unlock");
+    speak("Mission complete! Great job!");
+  }
+  const actIndex = ACTIVITY_TYPES.findIndex(a => a.id === state.currentActivity);
+  if (actIndex < ACTIVITY_TYPES.length - 1) {
+    state.currentActivity = ACTIVITY_TYPES[actIndex+1].id;
+    renderActivityTabs();
+    renderActivity();
+  } else {
+    showToast("🏆 All activities done!");
+    setTimeout(() => goToMap(), 1800);
+  }
+}
+
+function goToMap() {
+  showScreen("map-screen");
+  renderMap();
+}
+
+// ==========================================
+// UTILITIES
+// ==========================================
+function showScreen(id) {
+  document.querySelectorAll(".screen").forEach(s => s.classList.remove("active"));
+  document.getElementById(id).classList.add("active");
+}
+
+let toastTimer;
+function showToast(msg) {
+  const t = document.getElementById("toast");
+  t.textContent = msg;
+  t.classList.add("show");
+  clearTimeout(toastTimer);
+  toastTimer = setTimeout(() => t.classList.remove("show"), 2800);
+}
+
+// ==========================================
+// INIT
+// ==========================================
+renderGradeSelect();
+</script>
+
+<script>
+if ("serviceWorker" in navigator) {
+  window.addEventListener("load", () => {
+    navigator.serviceWorker.register("/service-worker.js")
+      .then(() => console.log("✅ Service Worker registered"))
+      .catch((e) => console.log("SW error:", e));
+  });
+}
+</script>
+</body>
+</html>

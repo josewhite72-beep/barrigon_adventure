@@ -1,0 +1,445 @@
+{
+  "grade": "G5",
+  "label": "Grade 5",
+  "color": "#30B0C7",
+  "mascot": "🦅",
+  "scenarios": [
+    {
+      "id": 1,
+      "title": "Following Instructions at School",
+      "location": "school",
+      "themes": [
+        {
+          "index": 0,
+          "title": "First, I Cut the Paper.",
+          "vocabulary": [
+            "first",
+            "then",
+            "next",
+            "finally",
+            "cut",
+            "fold",
+            "paste",
+            "draw",
+            "instructions"
+          ],
+          "narrative": {
+            "intro": "At The School in Barrigón, we follow step-by-step instructions to make amazing things! 🏫✂️"
+          },
+          "activities": {
+            "listening": {
+              "instruction": "🎧 Listen! What is the FIRST step? Tap it!",
+              "type": "mc",
+              "ttsText": "Listen carefully to the instructions! First, cut the paper into a rectangle. Then, fold it in half. Next, draw a picture on the front. Finally, write your name inside. Remember — first, cut the paper!",
+              "prompt": "📋 What is the FIRST step?",
+              "options": [
+                "Write your name ✍️",
+                "Fold it in half 📄",
+                "Cut the paper ✂️",
+                "Draw a picture 🎨"
+              ],
+              "answer": 2,
+              "feedback": "Yes! First, cut the paper! ✂️"
+            },
+            "reading": {
+              "instruction": "📖 Read the instructions and answer!",
+              "type": "mc",
+              "story": "How to make a card at school: 🏫\nFirst, cut the paper into a rectangle. ✂️\nThen, fold it in half carefully. 📄\nNext, draw a beautiful picture on the front. 🎨\nFinally, write a kind message inside. ✍️\nYour card is ready — give it to a friend!",
+              "question": "What do you do AFTER folding the paper?",
+              "options": [
+                "Cut the paper. ✂️",
+                "Write a message. ✍️",
+                "Draw a picture on the front. 🎨",
+                "Give it to a friend."
+              ],
+              "answer": 2,
+              "feedback": "Great! After folding, you draw a picture! 🎨"
+            },
+            "writing": {
+              "instruction": "✏️ Complete the instruction sequence!",
+              "type": "write",
+              "prompt": "First, _______ the paper.\nThen, fold it in half.\nNext, _______ a picture.",
+              "answer": "cut",
+              "hint": "Use scissors for the first step! ✂️",
+              "feedback": "Perfect! First cut, then fold, next draw! ✂️📄🎨"
+            },
+            "speaking": {
+              "instruction": "🗣️ Give the instructions out loud!",
+              "type": "speak",
+              "prompt": "First, cut the paper. Then, fold it in half. Next, draw a picture. Finally, write your name!",
+              "ttsText": "First, cut the paper. Then, fold it in half. Next, draw a picture. Finally, write your name!",
+              "image": "✂️",
+              "caption": "The School 🏫 — Step by Step!",
+              "feedback": "Excellent instructions! 🌟✂️"
+            },
+            "mediation": {
+              "instruction": "🌐 A new student doesn't understand the instructions!",
+              "type": "mc",
+              "prompt": "The teacher says:\n\"First, cut the paper. Then fold it.\"\n\nYour classmate whispers:\n\"No entiendo. ¿Qué hago primero?\"",
+              "options": [
+                "First, write your name. Then cut.",
+                "First, cut the paper. Then fold it in half.",
+                "First, draw a picture. Then paste it.",
+                "First, fold the paper. Then cut it."
+              ],
+              "answer": 1,
+              "feedback": "Perfect mediation! First cut, then fold! ✂️📄"
+            }
+          }
+        },
+        {
+          "index": 1,
+          "title": "Let's Make a Poster!",
+          "vocabulary": [
+            "poster",
+            "title",
+            "information",
+            "colorful",
+            "present",
+            "audience",
+            "design"
+          ],
+          "narrative": {
+            "intro": "At The School in Barrigón, we make posters about our community! 🏫🎨"
+          },
+          "activities": {
+            "listening": {
+              "instruction": "🎧 Listen! What goes at the TOP of a poster? Tap it!",
+              "type": "mc",
+              "ttsText": "Let's make a poster about Barrigón! First, write a big, colorful title at the top. The title tells people what the poster is about. Then add pictures and information in the middle. Finally, write your name at the bottom. The title goes at the top!",
+              "prompt": "🎨 What goes at the TOP of the poster?",
+              "options": [
+                "Your name ✍️",
+                "Pictures 🖼️",
+                "The title 📌",
+                "Information 📝"
+              ],
+              "answer": 2,
+              "feedback": "Yes! The title goes at the top! 📌🎨"
+            },
+            "reading": {
+              "instruction": "📖 Read and choose!",
+              "type": "mc",
+              "story": "Our class is making posters about Barrigón! 🏫🎨\nStep 1: Choose a place from the Barrigón map.\nStep 2: Write a colorful title at the top.\nStep 3: Draw or paste pictures in the middle.\nStep 4: Write 3 interesting facts about the place.\nStep 5: Present your poster to the class!",
+              "question": "What is the LAST step when making the poster?",
+              "options": [
+                "Write the title.",
+                "Choose a place from the map.",
+                "Draw pictures.",
+                "Present your poster to the class."
+              ],
+              "answer": 3,
+              "feedback": "Great! The last step is to present to the class! 🎤"
+            },
+            "writing": {
+              "instruction": "✏️ Complete the poster plan!",
+              "type": "write",
+              "prompt": "My poster is about: _______.\nMy title is: _______ in Barrigón!",
+              "answer": "park",
+              "hint": "Choose a place from the Barrigón map! 🗺️",
+              "feedback": "Great poster plan! Let's make it colorful! 🎨"
+            },
+            "speaking": {
+              "instruction": "🗣️ Present your poster to the class!",
+              "type": "speak",
+              "prompt": "My poster is about Omar Torrijos Park. It is the best place in Barrigón! It has beautiful trees and amazing animals.",
+              "ttsText": "My poster is about Omar Torrijos Park. It is the best place in Barrigón! It has beautiful trees and amazing animals.",
+              "image": "🎨",
+              "caption": "The School 🏫 — Poster Presentation!",
+              "feedback": "Amazing presentation! 🌟🎨"
+            },
+            "mediation": {
+              "instruction": "🌐 Help your classmate present in English!",
+              "type": "mc",
+              "prompt": "Your classmate wants to say:\n\"Mi póster es sobre el río. Tiene agua fresca y es muy bonito.\"",
+              "options": [
+                "My poster is about the school. It is big and old.",
+                "My poster is about the river. It has fresh water and it is very beautiful.",
+                "My poster is about the market. We buy things there.",
+                "My poster is about the park. It has many trees."
+              ],
+              "answer": 1,
+              "feedback": "Excellent mediation! The river has fresh water and is beautiful! 🌊"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "title": "Taking Care of Our Classroom",
+      "location": "school",
+      "themes": [
+        {
+          "index": 0,
+          "title": "We Are Sweeping the Floors.",
+          "vocabulary": [
+            "sweep",
+            "mop",
+            "clean",
+            "broom",
+            "dustpan",
+            "responsibility",
+            "together",
+            "tidy"
+          ],
+          "narrative": {
+            "intro": "At The School in Barrigón, we take care of our classroom together! Everyone helps! 🏫🧹"
+          },
+          "activities": {
+            "listening": {
+              "instruction": "🎧 Listen! Who is sweeping the floor? Tap it!",
+              "type": "mc",
+              "ttsText": "At our school in Barrigón, we take care of our classroom! Today, Maria and Pedro are sweeping the floors with a broom. Carlos is picking up the chairs. Everyone is helping to keep the classroom clean and tidy. We are sweeping the floors together!",
+              "prompt": "🧹 Who is sweeping the floors?",
+              "options": [
+                "The teacher 👩‍🏫",
+                "Maria and Pedro 👧👦",
+                "Carlos alone 👦",
+                "Nobody 🚫"
+              ],
+              "answer": 1,
+              "feedback": "Yes! Maria and Pedro are sweeping! 🧹"
+            },
+            "reading": {
+              "instruction": "📖 Read and choose the best answer!",
+              "type": "mc",
+              "story": "Every Friday at our school in Barrigón, we clean our classroom. 🏫🧹\nSome students sweep the floors with brooms.\nOthers arrange the chairs and desks neatly.\nWe wipe the windows and pick up any trash.\nTaking care of our classroom is everyone's responsibility.\nA clean classroom helps us learn better!",
+              "question": "Why is it important to clean the classroom?",
+              "options": [
+                "Because the teacher asks us to.",
+                "Because it is Friday.",
+                "Because a clean classroom helps us learn better.",
+                "Because we don't want homework."
+              ],
+              "answer": 2,
+              "feedback": "Excellent! A clean classroom helps us learn better! 🧹🏫"
+            },
+            "writing": {
+              "instruction": "✏️ Complete the sentence!",
+              "type": "write",
+              "prompt": "We are _______ the floors with a broom.\nKeeping our classroom clean is our _______.",
+              "answer": "sweeping",
+              "hint": "We use a broom to do this! 🧹",
+              "feedback": "Perfect! We are sweeping the floors! 🧹"
+            },
+            "speaking": {
+              "instruction": "🗣️ Describe what your class is doing!",
+              "type": "speak",
+              "prompt": "We are taking care of our classroom! Maria is sweeping the floors. Carlos is arranging the chairs. We work together!",
+              "ttsText": "We are taking care of our classroom! Maria is sweeping the floors. Carlos is arranging the chairs. We work together!",
+              "image": "🧹",
+              "caption": "The School 🏫 — Cleaning Day!",
+              "feedback": "Wonderful! You described the action perfectly! 🌟"
+            },
+            "mediation": {
+              "instruction": "🌐 A visitor asks what the students are doing!",
+              "type": "mc",
+              "prompt": "A visitor asks in Spanish:\n\"¿Qué están haciendo los estudiantes?\"",
+              "options": [
+                "We are eating lunch in the classroom.",
+                "We are sweeping the floors and cleaning our classroom.",
+                "We are playing games outside.",
+                "We are reading books at our desks."
+              ],
+              "answer": 1,
+              "feedback": "Great mediation! We are sweeping and cleaning! 🧹🏫"
+            }
+          }
+        },
+        {
+          "index": 1,
+          "title": "Let's Arrange the Chairs.",
+          "vocabulary": [
+            "arrange",
+            "neatly",
+            "rows",
+            "circle",
+            "group",
+            "position",
+            "organize",
+            "place"
+          ],
+          "narrative": {
+            "intro": "After cleaning, we arrange the chairs at The School in Barrigón! How should we organize them? 🪑🏫"
+          },
+          "activities": {
+            "listening": {
+              "instruction": "🎧 Listen! How does the teacher want the chairs? Tap it!",
+              "type": "mc",
+              "ttsText": "OK class, let's arrange the chairs! Please put the chairs in neat rows facing the board. Not in a circle — in rows! Arrange them neatly in rows so everyone can see. Let's arrange the chairs in rows!",
+              "prompt": "🪑 The teacher wants the chairs in _______!",
+              "options": [
+                "a circle 🔵",
+                "neat rows 📏",
+                "groups of four 👥",
+                "random order 🔀"
+              ],
+              "answer": 1,
+              "feedback": "Yes! Arrange the chairs in neat rows! 🪑📏"
+            },
+            "reading": {
+              "instruction": "📖 Read and answer!",
+              "type": "mc",
+              "story": "After sweeping, it's time to arrange the classroom. 🏫🪑\nThe teacher says: \"Let's put the chairs in groups of four.\"\n\"Each group will work on a different project.\"\nThe students carefully arrange four chairs around each desk.\nThey work neatly and quietly.\nSoon the classroom looks organized and ready for learning!",
+              "question": "How many chairs are in each group?",
+              "options": [
+                "Two chairs",
+                "Three chairs",
+                "Four chairs",
+                "Five chairs"
+              ],
+              "answer": 2,
+              "feedback": "Great reading! Four chairs in each group! 🪑🪑🪑🪑"
+            },
+            "writing": {
+              "instruction": "✏️ Write the instruction!",
+              "type": "write",
+              "prompt": "Let's _______ the chairs in neat rows.\nEveryone can _______ the board!",
+              "answer": "arrange",
+              "hint": "We organize and position them carefully! 🪑",
+              "feedback": "Perfect! Let's arrange the chairs! 🪑📏"
+            },
+            "speaking": {
+              "instruction": "🗣️ Give your classmates instructions!",
+              "type": "speak",
+              "prompt": "Let's arrange the chairs! Put them in neat rows facing the board. Work together and be careful!",
+              "ttsText": "Let's arrange the chairs! Put them in neat rows facing the board. Work together and be careful!",
+              "image": "🪑",
+              "caption": "The School 🏫 — Organized and Ready!",
+              "feedback": "Great instructions! You're a natural leader! 🌟"
+            },
+            "mediation": {
+              "instruction": "🌐 A new student doesn't understand the teacher!",
+              "type": "mc",
+              "prompt": "The teacher says:\n\"Arrange the chairs in neat rows.\"\n\nThe new student asks:\n\"¿Qué significa 'arrange'?\"",
+              "options": [
+                "It means to break the chairs.",
+                "It means to sit down on the chairs.",
+                "It means to organize and place the chairs neatly.",
+                "It means to count the chairs."
+              ],
+              "answer": 2,
+              "feedback": "Perfect! Arrange means to organize and place neatly! 🪑📏"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "title": "The Local Farm Stand",
+      "location": "shops",
+      "themes": [
+        {
+          "index": 0,
+          "title": "I Need to Buy Fruit.",
+          "vocabulary": [],
+          "activities": {}
+        },
+        {
+          "index": 1,
+          "title": "How Much Does It Cost?",
+          "vocabulary": [],
+          "activities": {}
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "title": "Helping Around the House",
+      "location": "church",
+      "themes": [
+        {
+          "index": 0,
+          "title": "I Have to Feed the Cat.",
+          "vocabulary": [],
+          "activities": {}
+        },
+        {
+          "index": 1,
+          "title": "She Has to Do Her Homework.",
+          "vocabulary": [],
+          "activities": {}
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "title": "Conservation Morning, Noon, Night",
+      "location": "park",
+      "themes": [
+        {
+          "index": 0,
+          "title": "We Should Save Water in the Morning.",
+          "vocabulary": [],
+          "activities": {}
+        },
+        {
+          "index": 1,
+          "title": "Let's Turn Off Lights at Night.",
+          "vocabulary": [],
+          "activities": {}
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "title": "Recycling for Our World",
+      "location": "park",
+      "themes": [
+        {
+          "index": 0,
+          "title": "We Recycle Plastic Bottles Every Day.",
+          "vocabulary": [],
+          "activities": {}
+        },
+        {
+          "index": 1,
+          "title": "Recycling Helps Our Animals.",
+          "vocabulary": [],
+          "activities": {}
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "title": "The Beautiful Mola",
+      "location": "church",
+      "themes": [
+        {
+          "index": 0,
+          "title": "Kuna Women Make Molas.",
+          "vocabulary": [],
+          "activities": {}
+        },
+        {
+          "index": 1,
+          "title": "The Mola Represents Kuna Culture.",
+          "vocabulary": [],
+          "activities": {}
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "title": "Our Traditional Style of Dress",
+      "location": "church",
+      "themes": [
+        {
+          "index": 0,
+          "title": "She Is Wearing a Pollera.",
+          "vocabulary": [],
+          "activities": {}
+        },
+        {
+          "index": 1,
+          "title": "The Montuno Is for Men.",
+          "vocabulary": [],
+          "activities": {}
+        }
+      ]
+    }
+  ],
+  "_note": "Activities not yet built. Add scenarios following grade2.json structure."
+}

@@ -1,0 +1,437 @@
+{
+  "grade": "G1",
+  "label": "Grade 1",
+  "color": "#34C759",
+  "mascot": "🐸",
+  "scenarios": [
+    {
+      "id": 1,
+      "title": "All Week Long!",
+      "location": "school",
+      "themes": [
+        {
+          "index": 0,
+          "title": "Today Is Tuesday!",
+          "vocabulary": [
+            "Monday",
+            "Tuesday",
+            "Wednesday",
+            "Thursday",
+            "Friday",
+            "today",
+            "week"
+          ],
+          "narrative": {
+            "intro": "Every day of the week we visit a place in Barrigón! Today is Tuesday — let's go to The Shops! 🛒"
+          },
+          "activities": {
+            "listening": {
+              "instruction": "🎧 Listen! What day is it? Tap it!",
+              "type": "mc",
+              "ttsText": "Today is Tuesday! On Tuesday we go to the shops in Barrigón. Today is Tuesday!",
+              "prompt": "🛒 We go here on Tuesday!",
+              "options": [
+                "Monday 🏫",
+                "Tuesday 🛒",
+                "Thursday 🌊",
+                "Friday 🏫"
+              ],
+              "answer": 1,
+              "feedback": "Yes! Today is Tuesday! 🛒"
+            },
+            "reading": {
+              "instruction": "📖 Read and choose!",
+              "type": "mc",
+              "story": "Monday 🏫 — The School\nTuesday 🛒 — The Shops\nWednesday ⛪ — The Church\nToday is Tuesday!",
+              "question": "Where do we go on Tuesday?",
+              "options": [
+                "The School 🏫",
+                "The Church ⛪",
+                "The Shops 🛒",
+                "The River 🌊"
+              ],
+              "answer": 2,
+              "feedback": "Great! Tuesday — The Shops! 🛒"
+            },
+            "writing": {
+              "instruction": "✏️ Complete the sentence!",
+              "type": "write",
+              "prompt": "Today is _______.",
+              "answer": "tuesday",
+              "hint": "We go to 🛒 The Shops!",
+              "feedback": "Perfect! Today is Tuesday! 🛒"
+            },
+            "speaking": {
+              "instruction": "🗣️ Say it out loud!",
+              "type": "speak",
+              "prompt": "Today is Tuesday!",
+              "ttsText": "Today is Tuesday!",
+              "image": "🛒",
+              "caption": "The Shops — Tuesday",
+              "feedback": "Wonderful! 🌟"
+            },
+            "mediation": {
+              "instruction": "🌐 Help your friend!",
+              "type": "mc",
+              "prompt": "Your friend asks:\n¿Qué día es hoy?",
+              "options": [
+                "Today is Tuesday! 🛒",
+                "Today is Monday! 🏫",
+                "Today is Friday! 🏫",
+                "Today is Sunday! 🌳"
+              ],
+              "answer": 0,
+              "feedback": "Great! Today is Tuesday! 🛒"
+            }
+          }
+        },
+        {
+          "index": 1,
+          "title": "It's the Weekend.",
+          "vocabulary": [
+            "Saturday",
+            "Sunday",
+            "weekend",
+            "yesterday",
+            "tomorrow"
+          ],
+          "narrative": {
+            "intro": "The weekend is here! On Saturday we visit Las Yayas Waterfall 💧 and on Sunday Omar Torrijos Park! 🌳"
+          },
+          "activities": {
+            "listening": {
+              "instruction": "🎧 Listen! What is the weekend? Tap it!",
+              "type": "mc",
+              "ttsText": "The weekend is here! Saturday and Sunday are the weekend! No school! Let's go to the waterfall!",
+              "prompt": "💧🌳 The weekend is _______ and _______!",
+              "options": [
+                "Mon + Tue 🏫🛒",
+                "Sat + Sun 💧🌳",
+                "Wed + Thu ⛪🌊",
+                "Thu + Fri 🌊🏫"
+              ],
+              "answer": 1,
+              "feedback": "Yes! Saturday and Sunday — the weekend! 💧🌳"
+            },
+            "reading": {
+              "instruction": "📖 Read and choose!",
+              "type": "mc",
+              "story": "Friday is the last school day. 🏫\nTomorrow is Saturday! 💧\nSaturday and Sunday are the weekend.\nWe go to Las Yayas Waterfall! 💧",
+              "question": "Where do we go on Saturday?",
+              "options": [
+                "The School 🏫",
+                "The Church ⛪",
+                "The River 🌊",
+                "Las Yayas Waterfall 💧"
+              ],
+              "answer": 3,
+              "feedback": "Great reading! Las Yayas on Saturday! 💧"
+            },
+            "writing": {
+              "instruction": "✏️ Complete the sentence!",
+              "type": "write",
+              "prompt": "Saturday and Sunday are the _______.",
+              "answer": "weekend",
+              "hint": "No school! 💧🌳",
+              "feedback": "Perfect! Saturday and Sunday are the weekend! 🌟"
+            },
+            "speaking": {
+              "instruction": "🗣️ Say it out loud!",
+              "type": "speak",
+              "prompt": "It's the weekend! Saturday and Sunday!",
+              "ttsText": "It's the weekend! Saturday and Sunday!",
+              "image": "💧",
+              "caption": "Las Yayas — Saturday!",
+              "feedback": "Amazing! 🌟"
+            },
+            "mediation": {
+              "instruction": "🌐 Help your friend!",
+              "type": "mc",
+              "prompt": "Your friend says:\n¡Es el fin de semana!",
+              "options": [
+                "It's the weekend! 💧🌳",
+                "It's Monday! 🏫",
+                "It's raining! 🌧️",
+                "It's Friday! 🏫"
+              ],
+              "answer": 0,
+              "feedback": "Yes! It's the weekend! 💧🌳"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "title": "Nice Weather Today!",
+      "location": "park",
+      "themes": [
+        {
+          "index": 0,
+          "title": "It's Sunny!",
+          "vocabulary": [
+            "sunny",
+            "hot",
+            "beautiful",
+            "today",
+            "park",
+            "outside"
+          ],
+          "narrative": {
+            "intro": "It's a sunny day in Barrigón! Let's go to Omar Torrijos Park! ☀️🌳"
+          },
+          "activities": {
+            "listening": {
+              "instruction": "🎧 Listen! What's the weather? Tap it!",
+              "type": "mc",
+              "ttsText": "Look outside! It's sunny today! The sun is shining! It's hot and beautiful. Let's go to the park!",
+              "prompt": "☀️ Today it's ______!",
+              "options": [
+                "sunny ☀️",
+                "rainy 🌧️",
+                "cloudy ☁️",
+                "windy 🌬️"
+              ],
+              "answer": 0,
+              "feedback": "Yes! It's sunny today! ☀️"
+            },
+            "reading": {
+              "instruction": "📖 Read and choose!",
+              "type": "mc",
+              "story": "Today is a beautiful day! ☀️\nIt is sunny and hot.\nWe go to 🌳 Omar Torrijos Park.\nThe sun is shining in Barrigón!",
+              "question": "Where do we go on a sunny day?",
+              "options": [
+                "The School 🏫",
+                "The Church ⛪",
+                "Omar Torrijos Park 🌳",
+                "The Shops 🛒"
+              ],
+              "answer": 2,
+              "feedback": "Great! We go to the park on a sunny day! 🌳☀️"
+            },
+            "writing": {
+              "instruction": "✏️ Complete the sentence!",
+              "type": "write",
+              "prompt": "Today it is _______!",
+              "answer": "sunny",
+              "hint": "The sun is shining! ☀️",
+              "feedback": "Perfect! Today it is sunny! ☀️"
+            },
+            "speaking": {
+              "instruction": "🗣️ Say it out loud!",
+              "type": "speak",
+              "prompt": "It's sunny today! Let's go to the park!",
+              "ttsText": "It's sunny today! Let's go to the park!",
+              "image": "☀️",
+              "caption": "Omar Torrijos Park 🌳",
+              "feedback": "Wonderful! 🌟"
+            },
+            "mediation": {
+              "instruction": "🌐 Help your friend!",
+              "type": "mc",
+              "prompt": "Your friend says:\n¡Hoy está soleado y caliente!",
+              "options": [
+                "It's rainy today! 🌧️",
+                "It's sunny and hot! ☀️",
+                "It's cloudy today! ☁️",
+                "It's cold today! 🥶"
+              ],
+              "answer": 1,
+              "feedback": "Yes! It's sunny and hot! ☀️"
+            }
+          }
+        },
+        {
+          "index": 1,
+          "title": "It's Raining.",
+          "vocabulary": [
+            "rainy",
+            "cloudy",
+            "cold",
+            "windy",
+            "umbrella",
+            "inside"
+          ],
+          "narrative": {
+            "intro": "It's raining in Barrigón today! We stay inside at The School. 🌧️🏫"
+          },
+          "activities": {
+            "listening": {
+              "instruction": "🎧 Listen! What's the weather? Tap it!",
+              "type": "mc",
+              "ttsText": "Oh no! It's raining today! It's cold and cloudy. We stay inside at school. It's raining!",
+              "prompt": "🌧️ Today it's ______!",
+              "options": [
+                "sunny ☀️",
+                "windy 🌬️",
+                "rainy 🌧️",
+                "hot 🔥"
+              ],
+              "answer": 2,
+              "feedback": "Yes! It's raining today! 🌧️"
+            },
+            "reading": {
+              "instruction": "📖 Read and choose!",
+              "type": "mc",
+              "story": "Look outside! 🌧️\nIt is rainy and cold today.\nWe stay inside at 🏫 The School.\nNo park today — it's raining!",
+              "question": "Where do we stay when it rains?",
+              "options": [
+                "The Park 🌳",
+                "The River 🌊",
+                "The Shops 🛒",
+                "The School 🏫"
+              ],
+              "answer": 3,
+              "feedback": "Right! We stay at school when it rains! 🏫🌧️"
+            },
+            "writing": {
+              "instruction": "✏️ Complete the sentence!",
+              "type": "write",
+              "prompt": "Today it is _______.",
+              "answer": "rainy",
+              "hint": "We need an umbrella! 🌧️",
+              "feedback": "Perfect! Today it is rainy! 🌧️"
+            },
+            "speaking": {
+              "instruction": "🗣️ Say it out loud!",
+              "type": "speak",
+              "prompt": "It's raining today! It's cold and cloudy.",
+              "ttsText": "It's raining today! It's cold and cloudy.",
+              "image": "🌧️",
+              "caption": "The School 🏫 — Rainy Day",
+              "feedback": "Amazing! 🌟"
+            },
+            "mediation": {
+              "instruction": "🌐 Help your friend!",
+              "type": "mc",
+              "prompt": "Your friend says:\n¡Hoy está lloviendo y hace frío!",
+              "options": [
+                "It's sunny and hot! ☀️",
+                "It's windy today! 🌬️",
+                "It's raining and cold! 🌧️",
+                "It's a beautiful day! 🌳"
+              ],
+              "answer": 2,
+              "feedback": "Yes! It's raining and cold! 🌧️"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "title": "Colors in Our World",
+      "location": "park",
+      "themes": [
+        {
+          "index": 0,
+          "title": "That's a Purple Flower.",
+          "vocabulary": [],
+          "activities": {}
+        },
+        {
+          "index": 1,
+          "title": "It's an Orange Cat.",
+          "vocabulary": [],
+          "activities": {}
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "title": "My Family and I",
+      "location": "church",
+      "themes": [
+        {
+          "index": 0,
+          "title": "Mom Cooks Dinner.",
+          "vocabulary": [],
+          "activities": {}
+        },
+        {
+          "index": 1,
+          "title": "We Play Together.",
+          "vocabulary": [],
+          "activities": {}
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "title": "Colors of Things that Go",
+      "location": "shops",
+      "themes": [
+        {
+          "index": 0,
+          "title": "A Red Bike",
+          "vocabulary": [],
+          "activities": {}
+        },
+        {
+          "index": 1,
+          "title": "Buses Are Yellow.",
+          "vocabulary": [],
+          "activities": {}
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "title": "Shapes Around Us",
+      "location": "school",
+      "themes": [
+        {
+          "index": 0,
+          "title": "A Circle Is Round.",
+          "vocabulary": [],
+          "activities": {}
+        },
+        {
+          "index": 1,
+          "title": "There Are Three Triangles.",
+          "vocabulary": [],
+          "activities": {}
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "title": "Shapes on Our Plates",
+      "location": "shops",
+      "themes": [
+        {
+          "index": 0,
+          "title": "We Eat Beans.",
+          "vocabulary": [],
+          "activities": {}
+        },
+        {
+          "index": 1,
+          "title": "Soup Is Delicious.",
+          "vocabulary": [],
+          "activities": {}
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "title": "It's Our Garden.",
+      "location": "park",
+      "themes": [
+        {
+          "index": 0,
+          "title": "These Are Flowers.",
+          "vocabulary": [],
+          "activities": {}
+        },
+        {
+          "index": 1,
+          "title": "I Like Tomatoes.",
+          "vocabulary": [],
+          "activities": {}
+        }
+      ]
+    }
+  ],
+  "_note": "Activities not yet built. Add scenarios following grade2.json structure."
+}

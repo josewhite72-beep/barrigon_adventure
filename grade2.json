@@ -1,0 +1,476 @@
+{
+  "grade": "G2",
+  "label": "Grade 2",
+  "color": "#5856D6",
+  "mascot": "🦋",
+  "scenarios": [
+    {
+      "id": 1,
+      "title": "School Days",
+      "location": "school",
+      "themes": [
+        {
+          "index": 0,
+          "title": "Yesterday Was Wednesday.",
+          "vocabulary": [
+            "Monday",
+            "Tuesday",
+            "Wednesday",
+            "Thursday",
+            "Friday"
+          ],
+          "narrative": {
+            "intro": "Every day of the week, we visit a place in Barrigón!",
+            "dayMap": [
+              {
+                "day": "Monday",
+                "emoji": "🏫",
+                "place": "The School"
+              },
+              {
+                "day": "Tuesday",
+                "emoji": "🛒",
+                "place": "The Shops"
+              },
+              {
+                "day": "Wednesday",
+                "emoji": "⛪",
+                "place": "The Church"
+              },
+              {
+                "day": "Thursday",
+                "emoji": "🌊",
+                "place": "The River"
+              },
+              {
+                "day": "Friday",
+                "emoji": "🏫",
+                "place": "The School"
+              },
+              {
+                "day": "Saturday",
+                "emoji": "💧",
+                "place": "Las Yayas Waterfall"
+              },
+              {
+                "day": "Sunday",
+                "emoji": "🌳",
+                "place": "Omar Torrijos Park"
+              }
+            ]
+          },
+          "activities": {
+            "listening": {
+              "instruction": "🎧 Listen! What day is it? Tap the right answer!",
+              "type": "mc",
+              "ttsText": "Today is Wednesday. Yesterday was Tuesday. We go to the Church on Wednesday!",
+              "prompt": "⛪ We go here on Wednesday!",
+              "options": [
+                "Monday 🏫",
+                "Wednesday ⛪",
+                "Friday 🏫",
+                "Sunday 🌳"
+              ],
+              "answer": 1,
+              "feedback": "Yes! Wednesday — we visit the Church! ⛪"
+            },
+            "reading": {
+              "instruction": "📖 Read and choose the right day!",
+              "type": "mc",
+              "story": "On Monday, we go to 🏫 the School.\nOn Tuesday, we go to 🛒 the Shops.\nOn Wednesday, we go to ⛪ the Church.\nYesterday was Wednesday.",
+              "question": "What day is TODAY?",
+              "options": [
+                "Monday",
+                "Tuesday",
+                "Thursday 🌊",
+                "Wednesday"
+              ],
+              "answer": 2,
+              "feedback": "Great reading! Thursday — we visit the River! 🌊"
+            },
+            "writing": {
+              "instruction": "✏️ Complete the sentence!",
+              "type": "write",
+              "prompt": "Yesterday was Wednesday.\nToday is __________.",
+              "answer": "thursday",
+              "hint": "We go to 🌊 the River today!",
+              "feedback": "Perfect! Today is Thursday! 🌊"
+            },
+            "speaking": {
+              "instruction": "🗣️ Look and say the sentence out loud!",
+              "type": "speak",
+              "prompt": "Yesterday was Wednesday. Today is Thursday!",
+              "ttsText": "Yesterday was Wednesday. Today is Thursday!",
+              "image": "🌊",
+              "caption": "The River — Thursday",
+              "feedback": "Wonderful speaking! 🌟"
+            },
+            "mediation": {
+              "instruction": "🌐 Your friend speaks Spanish. Help them understand!",
+              "type": "mc",
+              "prompt": "Your friend asks:\n¿Qué día fue ayer?",
+              "options": [
+                "Yesterday was Wednesday! ⛪",
+                "Today is Monday! 🏫",
+                "Tomorrow is Sunday! 🌳",
+                "Yesterday was Friday! 🏫"
+              ],
+              "answer": 0,
+              "feedback": "Excellent! You helped your friend! 🌐"
+            }
+          }
+        },
+        {
+          "index": 1,
+          "title": "Today Is Friday!",
+          "vocabulary": [
+            "Friday",
+            "Saturday",
+            "Sunday",
+            "weekend",
+            "week"
+          ],
+          "activities": {
+            "listening": {
+              "instruction": "🎧 Listen! What day comes after Thursday? Tap it!",
+              "type": "mc",
+              "ttsText": "Monday, Tuesday, Wednesday, Thursday... What comes next? Friday! Today is Friday. We go back to school!",
+              "prompt": "🏫 We go here on Friday!",
+              "options": [
+                "Wednesday ⛪",
+                "Saturday 💧",
+                "Friday 🏫",
+                "Sunday 🌳"
+              ],
+              "answer": 2,
+              "feedback": "Yes! Friday — back to school! 🏫"
+            },
+            "reading": {
+              "instruction": "📖 Read and choose!",
+              "type": "mc",
+              "story": "Today is Friday! 🏫\nWe are at school.\nTomorrow is Saturday. 💧\nWe go to Las Yayas Waterfall!\nSunday is the last day. 🌳",
+              "question": "Where do we go on Saturday?",
+              "options": [
+                "The School 🏫",
+                "The Church ⛪",
+                "Las Yayas Waterfall 💧",
+                "The River 🌊"
+              ],
+              "answer": 2,
+              "feedback": "Great reading! Las Yayas Waterfall on Saturday! 💧"
+            },
+            "writing": {
+              "instruction": "✏️ Write the missing word!",
+              "type": "write",
+              "prompt": "Today is Friday.\nTomorrow is __________.",
+              "answer": "saturday",
+              "hint": "We visit 💧 Las Yayas!",
+              "feedback": "Perfect! Tomorrow is Saturday! 💧"
+            },
+            "speaking": {
+              "instruction": "🗣️ Say this out loud!",
+              "type": "speak",
+              "prompt": "Today is Friday! Tomorrow is Saturday. The weekend is here!",
+              "ttsText": "Today is Friday! Tomorrow is Saturday. The weekend is here!",
+              "image": "💧",
+              "caption": "Las Yayas — Saturday!",
+              "feedback": "Amazing! You spoke so well! 🌟"
+            },
+            "mediation": {
+              "instruction": "🌐 Help your friend understand!",
+              "type": "mc",
+              "prompt": "Your friend asks:\n¿Qué día es hoy?",
+              "options": [
+                "Today is Monday! 🏫",
+                "Today is Friday! 🏫",
+                "Today is Sunday! 🌳",
+                "Today is Wednesday! ⛪"
+              ],
+              "answer": 1,
+              "feedback": "Excellent! Today is Friday! 🏫"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "title": "School Life Adventures",
+      "location": "school",
+      "themes": [
+        {
+          "index": 0,
+          "title": "That's a Big Book!",
+          "vocabulary": [
+            "big",
+            "small",
+            "long",
+            "short",
+            "heavy",
+            "book",
+            "pencil",
+            "desk",
+            "chair",
+            "bag"
+          ],
+          "narrative": {
+            "intro": "At The School in Barrigón, we find all kinds of things — big, small, long, and short!"
+          },
+          "activities": {
+            "listening": {
+              "instruction": "🎧 Listen! Which object is BIG? Tap it!",
+              "type": "mc",
+              "ttsText": "Look around the classroom! That's a big book! The book is big and heavy. The pencil is long and thin.",
+              "prompt": "📚 That's a BIG, HEAVY ______!",
+              "options": [
+                "pencil ✏️",
+                "book 📚",
+                "chair 🪑",
+                "bag 🎒"
+              ],
+              "answer": 1,
+              "feedback": "Yes! That's a big, heavy book! 📚"
+            },
+            "reading": {
+              "instruction": "📖 Read and choose the right word!",
+              "type": "mc",
+              "story": "We are at 🏫 The School in Barrigón.\nLook at the classroom!\nThe book is BIG and HEAVY. 📚\nThe pencil is LONG and THIN. ✏️\nThe bag is SMALL. 🎒",
+              "question": "What is long and thin?",
+              "options": [
+                "The book 📚",
+                "The bag 🎒",
+                "The pencil ✏️",
+                "The desk 🪑"
+              ],
+              "answer": 2,
+              "feedback": "Great reading! The pencil is long and thin! ✏️"
+            },
+            "writing": {
+              "instruction": "✏️ Complete the sentence!",
+              "type": "write",
+              "prompt": "The book is big and _______.",
+              "answer": "heavy",
+              "hint": "It is hard to carry! 📚",
+              "feedback": "Perfect! The book is big and heavy! 📚"
+            },
+            "speaking": {
+              "instruction": "🗣️ Look and say the sentence out loud!",
+              "type": "speak",
+              "prompt": "That's a big book! It is heavy.",
+              "ttsText": "That's a big book! It is heavy.",
+              "image": "📚",
+              "caption": "The School — Big Book!",
+              "feedback": "Wonderful speaking! 🌟"
+            },
+            "mediation": {
+              "instruction": "🌐 Your friend speaks Spanish. Help them understand!",
+              "type": "mc",
+              "prompt": "Your friend says:\n¡Ese libro es grande y pesado!",
+              "options": [
+                "That's a big, heavy book! 📚",
+                "The pencil is long! ✏️",
+                "The bag is small! 🎒",
+                "The chair is short! 🪑"
+              ],
+              "answer": 0,
+              "feedback": "Excellent! You helped your friend understand! 🌐"
+            }
+          }
+        },
+        {
+          "index": 1,
+          "title": "That's a Small, Brown Bag.",
+          "vocabulary": [
+            "red",
+            "blue",
+            "brown",
+            "black",
+            "white",
+            "new",
+            "old",
+            "thin",
+            "light",
+            "small"
+          ],
+          "narrative": {
+            "intro": "At The School in Barrigón, our things have colors and sizes — let's describe them!"
+          },
+          "activities": {
+            "listening": {
+              "instruction": "🎧 Listen! What color is the bag? Tap it!",
+              "type": "mc",
+              "ttsText": "Look at this bag! That's a small, brown bag. It is light and new. My bag is brown. What color is your bag?",
+              "prompt": "🎒 That's a small, ______ bag!",
+              "options": [
+                "red 🔴",
+                "blue 🔵",
+                "brown 🟤",
+                "black ⚫"
+              ],
+              "answer": 2,
+              "feedback": "Yes! That's a small, brown bag! 🎒🟤"
+            },
+            "reading": {
+              "instruction": "📖 Read and choose!",
+              "type": "mc",
+              "story": "We are at 🏫 The School in Barrigón.\nMy bag is small and brown. 🎒\nIt is light — not heavy!\nMy pencil is long and black. ✏️\nMy book is big and old. 📚",
+              "question": "What color is the pencil?",
+              "options": [
+                "brown 🟤",
+                "red 🔴",
+                "white ⚪",
+                "black ⚫"
+              ],
+              "answer": 3,
+              "feedback": "Great reading! The pencil is black! ✏️⚫"
+            },
+            "writing": {
+              "instruction": "✏️ Complete the sentence!",
+              "type": "write",
+              "prompt": "That's a small, brown _______.",
+              "answer": "bag",
+              "hint": "We carry our things in it! 🎒",
+              "feedback": "Perfect! That's a small, brown bag! 🎒"
+            },
+            "speaking": {
+              "instruction": "🗣️ Look and say the sentence out loud!",
+              "type": "speak",
+              "prompt": "That's a small, brown bag. It is light and new!",
+              "ttsText": "That's a small, brown bag. It is light and new!",
+              "image": "🎒",
+              "caption": "The School — Small Brown Bag!",
+              "feedback": "Amazing speaking! 🌟"
+            },
+            "mediation": {
+              "instruction": "🌐 Help your friend understand!",
+              "type": "mc",
+              "prompt": "Your friend asks:\n¿De qué color es tu mochila?",
+              "options": [
+                "My bag is big and old! 📚",
+                "My bag is brown and small! 🎒🟤",
+                "My pencil is black! ✏️",
+                "The desk is new! 🪑"
+              ],
+              "answer": 1,
+              "feedback": "Excellent! You described your bag! 🌐🎒"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "title": "All About the Weather",
+      "location": "park",
+      "themes": [
+        {
+          "index": 0,
+          "title": "A Perfect Day!",
+          "vocabulary": [],
+          "activities": {}
+        },
+        {
+          "index": 1,
+          "title": "Dress for the Weather.",
+          "vocabulary": [],
+          "activities": {}
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "title": "All About My Body",
+      "location": "school",
+      "themes": [
+        {
+          "index": 0,
+          "title": "This Is My Hand.",
+          "vocabulary": [],
+          "activities": {}
+        },
+        {
+          "index": 1,
+          "title": "She Has Two Eyes.",
+          "vocabulary": [],
+          "activities": {}
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "title": "Exploring My Community",
+      "location": "shops",
+      "themes": [
+        {
+          "index": 0,
+          "title": "There's a Library.",
+          "vocabulary": [],
+          "activities": {}
+        },
+        {
+          "index": 1,
+          "title": "Let's Go to the Playground!",
+          "vocabulary": [],
+          "activities": {}
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "title": "Discovering Nature's Wonders",
+      "location": "park",
+      "themes": [
+        {
+          "index": 0,
+          "title": "That's a Tall Tree.",
+          "vocabulary": [],
+          "activities": {}
+        },
+        {
+          "index": 1,
+          "title": "Our National Flower",
+          "vocabulary": [],
+          "activities": {}
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "title": "Fun Outdoors!",
+      "location": "river",
+      "themes": [
+        {
+          "index": 0,
+          "title": "We Run Fast.",
+          "vocabulary": [],
+          "activities": {}
+        },
+        {
+          "index": 1,
+          "title": "They Swim in the Water.",
+          "vocabulary": [],
+          "activities": {}
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "title": "It's Festival Season.",
+      "location": "church",
+      "themes": [
+        {
+          "index": 0,
+          "title": "Carnival Is Here!",
+          "vocabulary": [],
+          "activities": {}
+        },
+        {
+          "index": 1,
+          "title": "I'm a Pollera Queen.",
+          "vocabulary": [],
+          "activities": {}
+        }
+      ]
+    }
+  ]
+}

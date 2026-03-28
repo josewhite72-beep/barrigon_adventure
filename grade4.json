@@ -1,0 +1,442 @@
+{
+  "grade": "G4",
+  "label": "Grade 4",
+  "color": "#007AFF",
+  "mascot": "🦦",
+  "scenarios": [
+    {
+      "id": 1,
+      "title": "A Walk in the Neighborhood",
+      "location": "school",
+      "themes": [
+        {
+          "index": 0,
+          "title": "This Is My Favorite.",
+          "vocabulary": [
+            "favorite",
+            "neighborhood",
+            "place",
+            "beautiful",
+            "love",
+            "prefer",
+            "visit"
+          ],
+          "narrative": {
+            "intro": "Welcome to Barrigón! We are going on a walk through the neighborhood. What is your favorite place? 🏫🛒⛪🌊💧🌳"
+          },
+          "activities": {
+            "listening": {
+              "instruction": "🎧 Listen carefully! What is Carlos's favorite place? Tap it!",
+              "type": "mc",
+              "ttsText": "Hi! My name is Carlos. I live in Barrigón. I love my neighborhood! There are many places here — the school, the shops, the church, the river, and the park. But my favorite place is the river. I love to go there on Thursdays. The river is beautiful and cool. This is my favorite place in Barrigón!",
+              "prompt": "🌊 Carlos's favorite place is the _______!",
+              "options": [
+                "school 🏫",
+                "shops 🛒",
+                "river 🌊",
+                "park 🌳"
+              ],
+              "answer": 2,
+              "feedback": "Yes! Carlos's favorite place is the river! 🌊"
+            },
+            "reading": {
+              "instruction": "📖 Read and answer the question!",
+              "type": "mc",
+              "story": "My name is Ana. I live in Barrigón.\nI love my neighborhood! Every day I walk to school. 🏫\nOn Tuesdays, I go to the shops with my mom. 🛒\nBut my favorite place is Omar Torrijos Park. 🌳\nIt is green, big, and beautiful.\nI go there every Sunday with my family.",
+              "question": "Why does Ana love Omar Torrijos Park?",
+              "options": [
+                "Because it has a market.",
+                "Because it is green, big, and beautiful.",
+                "Because she goes there on Tuesdays.",
+                "Because her school is there."
+              ],
+              "answer": 1,
+              "feedback": "Great reading! The park is green, big, and beautiful! 🌳"
+            },
+            "writing": {
+              "instruction": "✏️ Complete the sentence with TWO words!",
+              "type": "write",
+              "prompt": "My favorite place in Barrigón is the _______.\nIt is _______ and beautiful.",
+              "answer": "river",
+              "hint": "Think about a place on the map you love! 🗺️",
+              "feedback": "Great writing! My favorite place is beautiful! 🌟"
+            },
+            "speaking": {
+              "instruction": "🗣️ Talk about YOUR favorite place in Barrigón!",
+              "type": "speak",
+              "prompt": "My favorite place in Barrigón is the park. It is green and beautiful. I go there on Sundays!",
+              "ttsText": "My favorite place in Barrigón is the park. It is green and beautiful. I go there on Sundays!",
+              "image": "🗺️",
+              "caption": "Barrigón — Your Favorite Place!",
+              "feedback": "Wonderful! You described your favorite place! 🌟"
+            },
+            "mediation": {
+              "instruction": "🌐 A new student arrives. Help them understand!",
+              "type": "mc",
+              "prompt": "A new student from the city says:\n\"En mi ciudad, mi lugar favorito es el parque porque es grande y bonito.\"",
+              "options": [
+                "In my city, my favorite place is the school because it is big.",
+                "In my city, my favorite place is the park because it is large and beautiful.",
+                "My city has a market and a river.",
+                "I don't have a favorite place in my city."
+              ],
+              "answer": 1,
+              "feedback": "Excellent mediation! The park is large and beautiful! 🌳"
+            }
+          }
+        },
+        {
+          "index": 1,
+          "title": "It's the Best!",
+          "vocabulary": [
+            "best",
+            "amazing",
+            "incredible",
+            "recommend",
+            "must-see",
+            "special",
+            "unique"
+          ],
+          "narrative": {
+            "intro": "Barrigón is amazing! Let's tell visitors why our neighborhood is the BEST! 🏆"
+          },
+          "activities": {
+            "listening": {
+              "instruction": "🎧 Listen! Which place does the guide recommend? Tap it!",
+              "type": "mc",
+              "ttsText": "Welcome to Barrigón! This neighborhood is the best! You must visit Las Yayas Waterfall — it is incredible and unique! The water is cold and crystal clear. It is the best place in all of Barrigón! Don't miss it!",
+              "prompt": "🏆 The guide recommends _______!",
+              "options": [
+                "The School 🏫",
+                "The Shops 🛒",
+                "Las Yayas Waterfall 💧",
+                "The Church ⛪"
+              ],
+              "answer": 2,
+              "feedback": "Yes! Las Yayas Waterfall is the best! 💧🏆"
+            },
+            "reading": {
+              "instruction": "📖 Read and choose the best answer!",
+              "type": "mc",
+              "story": "Barrigón is the best neighborhood in Panama!\nIt has a beautiful school, colorful shops, and a historic church.\nBut the most amazing place is Omar Torrijos National Park. 🌳\nThe park has incredible trees, birds, and animals.\nVisitors from all over Panama come to see it.\nIt is truly the best!",
+              "question": "Why do visitors come to Barrigón?",
+              "options": [
+                "To buy things at the shops.",
+                "To study at the school.",
+                "To see Omar Torrijos National Park.",
+                "To swim in the river."
+              ],
+              "answer": 2,
+              "feedback": "Great! Visitors come to see Omar Torrijos Park! 🌳"
+            },
+            "writing": {
+              "instruction": "✏️ Complete the recommendation!",
+              "type": "write",
+              "prompt": "You must visit _______!\nIt is the best place in Barrigón!",
+              "answer": "park",
+              "hint": "It has incredible trees and animals! 🌳",
+              "feedback": "Great recommendation! It's the best! 🏆🌳"
+            },
+            "speaking": {
+              "instruction": "🗣️ Recommend Barrigón to a visitor!",
+              "type": "speak",
+              "prompt": "Barrigón is the best neighborhood! You must visit Las Yayas Waterfall — it's incredible and unique!",
+              "ttsText": "Barrigón is the best neighborhood! You must visit Las Yayas Waterfall — it's incredible and unique!",
+              "image": "💧",
+              "caption": "Las Yayas — It's the Best! 🏆",
+              "feedback": "Amazing recommendation! 🌟🏆"
+            },
+            "mediation": {
+              "instruction": "🌐 A tourist needs help! What does the sign say?",
+              "type": "mc",
+              "prompt": "A tourist reads a sign:\n\"¡El Parque Omar Torrijos es lo mejor! ¡No te lo pierdas!\"",
+              "options": [
+                "Omar Torrijos Park is closed today.",
+                "Omar Torrijos Park is the best! Don't miss it!",
+                "Omar Torrijos Park is far from here.",
+                "Omar Torrijos Park has a restaurant."
+              ],
+              "answer": 1,
+              "feedback": "Perfect! Omar Torrijos Park is the best! Don't miss it! 🌳🏆"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "title": "Helping in the Garden",
+      "location": "park",
+      "themes": [
+        {
+          "index": 0,
+          "title": "The Tomatoes Grow Quickly.",
+          "vocabulary": [
+            "grow",
+            "quickly",
+            "slowly",
+            "plant",
+            "water",
+            "sun",
+            "soil",
+            "harvest"
+          ],
+          "narrative": {
+            "intro": "Near Omar Torrijos Park in Barrigón, families grow vegetables! Let's help in the garden! 🌱🌳"
+          },
+          "activities": {
+            "listening": {
+              "instruction": "🎧 Listen! How do the tomatoes grow? Tap it!",
+              "type": "mc",
+              "ttsText": "Come to the garden near Omar Torrijos Park! Look at these tomatoes! They grow quickly in the Panamanian sun. We water them every day and they grow fast. The tomatoes grow quickly because they have good soil, water, and lots of sunshine!",
+              "prompt": "🍅 The tomatoes grow _______!",
+              "options": [
+                "slowly 🐢",
+                "quickly 🚀",
+                "never ❌",
+                "quietly 🤫"
+              ],
+              "answer": 1,
+              "feedback": "Yes! The tomatoes grow quickly! 🍅🚀"
+            },
+            "reading": {
+              "instruction": "📖 Read and choose the best answer!",
+              "type": "mc",
+              "story": "Near Omar Torrijos Park, we have a community garden. 🌱\nWe plant tomatoes, peppers, and corn.\nThe tomatoes grow quickly because Panama has lots of sun and rain.\nWe water the plants every morning.\nIn six weeks, we can harvest the tomatoes!\nFresh tomatoes are delicious and healthy.",
+              "question": "Why do the tomatoes grow quickly?",
+              "options": [
+                "Because they are planted near the school.",
+                "Because Panama has lots of sun and rain.",
+                "Because the students water them at night.",
+                "Because tomatoes always grow fast."
+              ],
+              "answer": 1,
+              "feedback": "Excellent! Panama's sun and rain make them grow quickly! 🍅☀️🌧️"
+            },
+            "writing": {
+              "instruction": "✏️ Complete the sentence!",
+              "type": "write",
+              "prompt": "The tomatoes grow _______ because Panama has lots of sun and _______.",
+              "answer": "quickly",
+              "hint": "They grow fast! 🍅🚀",
+              "feedback": "Perfect! The tomatoes grow quickly! 🍅"
+            },
+            "speaking": {
+              "instruction": "🗣️ Explain how the garden grows!",
+              "type": "speak",
+              "prompt": "The tomatoes grow quickly! We water them every day. Panama has lots of sun and rain!",
+              "ttsText": "The tomatoes grow quickly! We water them every day. Panama has lots of sun and rain!",
+              "image": "🍅",
+              "caption": "Community Garden — near Omar Torrijos Park 🌳",
+              "feedback": "Wonderful explanation! 🌟🍅"
+            },
+            "mediation": {
+              "instruction": "🌐 A friend from another country asks about your garden!",
+              "type": "mc",
+              "prompt": "Your friend asks:\n\"¿Por qué los tomates crecen tan rápido en Panamá?\"",
+              "options": [
+                "Because we plant them near the river.",
+                "Because Panamanian tomatoes are special.",
+                "Because Panama has lots of sun and rain.",
+                "Because we harvest them every day."
+              ],
+              "answer": 2,
+              "feedback": "Great mediation! Panama has lots of sun and rain! ☀️🌧️🍅"
+            }
+          }
+        },
+        {
+          "index": 1,
+          "title": "These Plants Are from Panama.",
+          "vocabulary": [
+            "native",
+            "Panama",
+            "species",
+            "tropical",
+            "environment",
+            "protect",
+            "endemic"
+          ],
+          "narrative": {
+            "intro": "Omar Torrijos Park has amazing native plants from Panama! Let's learn about them! 🌿🌳"
+          },
+          "activities": {
+            "listening": {
+              "instruction": "🎧 Listen! Where are these plants from? Tap it!",
+              "type": "mc",
+              "ttsText": "Look at these beautiful plants! These plants are from Panama. They are native to our country. You can find them in Omar Torrijos National Park right here in Barrigón. We must protect them because they are special and unique to Panama!",
+              "prompt": "🌿 These plants are from _______!",
+              "options": [
+                "Mexico 🇲🇽",
+                "Colombia 🇨🇴",
+                "Panama 🇵🇦",
+                "Costa Rica 🇨🇷"
+              ],
+              "answer": 2,
+              "feedback": "Yes! These plants are from Panama! 🌿🇵🇦"
+            },
+            "reading": {
+              "instruction": "📖 Read and answer!",
+              "type": "mc",
+              "story": "Omar Torrijos National Park is home to many native plants. 🌿\nThese plants are from Panama — they are endemic species.\nYou cannot find them anywhere else in the world!\nThe tropical climate of Panama helps them grow.\nIt is our responsibility to protect these amazing plants.\nThey are part of our natural heritage.",
+              "question": "What makes Panama's endemic plants special?",
+              "options": [
+                "They grow very quickly.",
+                "They are very colorful.",
+                "You cannot find them anywhere else in the world.",
+                "They only grow near the river."
+              ],
+              "answer": 2,
+              "feedback": "Excellent! Panama's plants are unique in the world! 🌿🌍"
+            },
+            "writing": {
+              "instruction": "✏️ Complete the sentence!",
+              "type": "write",
+              "prompt": "These plants are from _______.\nWe must _______ them!",
+              "answer": "panama",
+              "hint": "They are native to our country! 🌿🇵🇦",
+              "feedback": "Perfect! These plants are from Panama and we must protect them! 🌿"
+            },
+            "speaking": {
+              "instruction": "🗣️ Tell a visitor about Panama's plants!",
+              "type": "speak",
+              "prompt": "These plants are from Panama! They are native and special. We must protect them!",
+              "ttsText": "These plants are from Panama! They are native and special. We must protect them!",
+              "image": "🌿",
+              "caption": "Omar Torrijos Park 🌳 — Native Plants",
+              "feedback": "Amazing! You're a nature ambassador! 🌟🌿"
+            },
+            "mediation": {
+              "instruction": "🌐 A tourist asks about the plants in the park!",
+              "type": "mc",
+              "prompt": "A tourist says:\n\"¿Estas plantas son de Panamá? ¿Son especiales?\"",
+              "options": [
+                "Yes! These plants are from Colombia and are very common.",
+                "Yes! These plants are from Panama and are endemic — very special and unique!",
+                "No, these plants are from all over the world.",
+                "Yes, but we don't need to protect them."
+              ],
+              "answer": 1,
+              "feedback": "Perfect mediation! Panama's plants are endemic and unique! 🌿🇵🇦"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "title": "Shopping at the Market",
+      "location": "shops",
+      "themes": [
+        {
+          "index": 0,
+          "title": "How Much Is the Pineapple?",
+          "vocabulary": [],
+          "activities": {}
+        },
+        {
+          "index": 1,
+          "title": "I Need Five Plantains.",
+          "vocabulary": [],
+          "activities": {}
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "title": "Visiting the Panama Canal",
+      "location": "river",
+      "themes": [
+        {
+          "index": 0,
+          "title": "The Vessels Are Big Because...",
+          "vocabulary": [],
+          "activities": {}
+        },
+        {
+          "index": 1,
+          "title": "The Panama Canal Is 110 Years Old.",
+          "vocabulary": [],
+          "activities": {}
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "title": "Conservation Morning, Noon, Night",
+      "location": "park",
+      "themes": [
+        {
+          "index": 0,
+          "title": "We Recycle Plastic Bottles Every Day.",
+          "vocabulary": [],
+          "activities": {}
+        },
+        {
+          "index": 1,
+          "title": "Turn Off the Lights at Night.",
+          "vocabulary": [],
+          "activities": {}
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "title": "Recycling for Our World",
+      "location": "park",
+      "themes": [
+        {
+          "index": 0,
+          "title": "Recycling Helps Our Animals.",
+          "vocabulary": [],
+          "activities": {}
+        },
+        {
+          "index": 1,
+          "title": "I Will Use Less Water.",
+          "vocabulary": [],
+          "activities": {}
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "title": "The Beautiful Mola",
+      "location": "church",
+      "themes": [
+        {
+          "index": 0,
+          "title": "Molas Have Many Shapes.",
+          "vocabulary": [],
+          "activities": {}
+        },
+        {
+          "index": 1,
+          "title": "Molas Tell Stories.",
+          "vocabulary": [],
+          "activities": {}
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "title": "Our Traditional Style of Dress",
+      "location": "church",
+      "themes": [
+        {
+          "index": 0,
+          "title": "The Montuno Is Important.",
+          "vocabulary": [],
+          "activities": {}
+        },
+        {
+          "index": 1,
+          "title": "We Wear a Pollera at Festivals.",
+          "vocabulary": [],
+          "activities": {}
+        }
+      ]
+    }
+  ],
+  "_note": "Activities not yet built. Add scenarios following grade2.json structure."
+}

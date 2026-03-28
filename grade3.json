@@ -1,0 +1,443 @@
+{
+  "grade": "G3",
+  "label": "Grade 3",
+  "color": "#FF3B30",
+  "mascot": "🦜",
+  "scenarios": [
+    {
+      "id": 1,
+      "title": "Places I Can Go",
+      "location": "school",
+      "themes": [
+        {
+          "index": 0,
+          "title": "I'm at School.",
+          "vocabulary": [
+            "school",
+            "market",
+            "church",
+            "river",
+            "park",
+            "at",
+            "I'm",
+            "where"
+          ],
+          "narrative": {
+            "intro": "Barrigón has many places to visit! Today we are at The School. Where are you? 🏫"
+          },
+          "activities": {
+            "listening": {
+              "instruction": "🎧 Listen! Where am I? Tap the right place!",
+              "type": "mc",
+              "ttsText": "I'm at school today! I study and learn at school. I'm at school in Barrigón. Where am I? I'm at school!",
+              "prompt": "🏫 I'm at the ______!",
+              "options": [
+                "market 🛒",
+                "church ⛪",
+                "school 🏫",
+                "park 🌳"
+              ],
+              "answer": 2,
+              "feedback": "Yes! I'm at school! 🏫"
+            },
+            "reading": {
+              "instruction": "📖 Read and choose!",
+              "type": "mc",
+              "story": "Barrigón has many places.\nI can go to The School. 🏫\nI can go to The Shops. 🛒\nI can go to The Church. ⛪\nToday, I'm at school!",
+              "question": "Where is the person today?",
+              "options": [
+                "At the shops 🛒",
+                "At the church ⛪",
+                "At the park 🌳",
+                "At school 🏫"
+              ],
+              "answer": 3,
+              "feedback": "Great reading! I'm at school today! 🏫"
+            },
+            "writing": {
+              "instruction": "✏️ Complete the sentence!",
+              "type": "write",
+              "prompt": "I'm at _______ today.",
+              "answer": "school",
+              "hint": "We study and learn here! 🏫",
+              "feedback": "Perfect! I'm at school today! 🏫"
+            },
+            "speaking": {
+              "instruction": "🗣️ Look at the map and say it out loud!",
+              "type": "speak",
+              "prompt": "I'm at school. I study and learn here!",
+              "ttsText": "I'm at school. I study and learn here!",
+              "image": "🏫",
+              "caption": "The School — Barrigón",
+              "feedback": "Wonderful speaking! 🌟"
+            },
+            "mediation": {
+              "instruction": "🌐 Your friend speaks Spanish. Help them!",
+              "type": "mc",
+              "prompt": "Your friend says:\n¿Dónde estás ahora?",
+              "options": [
+                "I'm at the park! 🌳",
+                "I'm at school! 🏫",
+                "I'm at the river! 🌊",
+                "I'm at the shops! 🛒"
+              ],
+              "answer": 1,
+              "feedback": "Excellent! I'm at school! 🏫"
+            }
+          }
+        },
+        {
+          "index": 1,
+          "title": "I'm at the Market.",
+          "vocabulary": [
+            "market",
+            "shop",
+            "buy",
+            "sell",
+            "price",
+            "money",
+            "I'm",
+            "at"
+          ],
+          "narrative": {
+            "intro": "Today we visit The Shops in Barrigón! We can buy things at the market. 🛒"
+          },
+          "activities": {
+            "listening": {
+              "instruction": "🎧 Listen! Where am I? Tap it!",
+              "type": "mc",
+              "ttsText": "I'm at the market today! I can buy fruits and vegetables at the market. The market is at The Shops in Barrigón. I'm at the market!",
+              "prompt": "🛒 I'm at the _______!",
+              "options": [
+                "school 🏫",
+                "waterfall 💧",
+                "market 🛒",
+                "river 🌊"
+              ],
+              "answer": 2,
+              "feedback": "Yes! I'm at the market! 🛒"
+            },
+            "reading": {
+              "instruction": "📖 Read and choose!",
+              "type": "mc",
+              "story": "Today I'm at the market! 🛒\nThe market is at The Shops in Barrigón.\nI can buy fruits, vegetables, and more.\nThe market is busy and colorful!",
+              "question": "What can you do at the market?",
+              "options": [
+                "Study and learn 📚",
+                "Swim in the water 🌊",
+                "Buy fruits and vegetables 🛒",
+                "Climb the waterfall 💧"
+              ],
+              "answer": 2,
+              "feedback": "Great! We buy things at the market! 🛒"
+            },
+            "writing": {
+              "instruction": "✏️ Complete the sentence!",
+              "type": "write",
+              "prompt": "I'm at the _______ today.",
+              "answer": "market",
+              "hint": "We buy fruits here! 🛒",
+              "feedback": "Perfect! I'm at the market! 🛒"
+            },
+            "speaking": {
+              "instruction": "🗣️ Say it out loud!",
+              "type": "speak",
+              "prompt": "I'm at the market. I can buy fruits and vegetables here!",
+              "ttsText": "I'm at the market. I can buy fruits and vegetables here!",
+              "image": "🛒",
+              "caption": "The Shops — Barrigón",
+              "feedback": "Amazing speaking! 🌟"
+            },
+            "mediation": {
+              "instruction": "🌐 Help your friend understand!",
+              "type": "mc",
+              "prompt": "Your friend says:\nEstoy en el mercado comprando frutas.",
+              "options": [
+                "I'm at school studying! 🏫",
+                "I'm at the park playing! 🌳",
+                "I'm at the market buying fruits! 🛒",
+                "I'm at the church! ⛪"
+              ],
+              "answer": 2,
+              "feedback": "Excellent! I'm at the market buying fruits! 🛒"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "title": "A Polite Request",
+      "location": "school",
+      "themes": [
+        {
+          "index": 0,
+          "title": "Can I Have a Pencil?",
+          "vocabulary": [
+            "can",
+            "have",
+            "please",
+            "thank you",
+            "pencil",
+            "book",
+            "eraser",
+            "borrow"
+          ],
+          "narrative": {
+            "intro": "At The School in Barrigón, we ask politely for what we need. Can I have a pencil, please? ✏️🏫"
+          },
+          "activities": {
+            "listening": {
+              "instruction": "🎧 Listen! What does the student want? Tap it!",
+              "type": "mc",
+              "ttsText": "Excuse me! Can I have a pencil, please? I need a pencil to write. Can I have a pencil please? Thank you!",
+              "prompt": "✏️ Can I have a _______, please?",
+              "options": [
+                "book 📚",
+                "pencil ✏️",
+                "bag 🎒",
+                "chair 🪑"
+              ],
+              "answer": 1,
+              "feedback": "Yes! Can I have a pencil, please? ✏️"
+            },
+            "reading": {
+              "instruction": "📖 Read and choose the polite request!",
+              "type": "mc",
+              "story": "We are at 🏫 The School in Barrigón.\nMaria needs a pencil.\nShe says: \"Can I have a pencil, please?\"\nThe teacher says: \"Yes, here you are!\"\nMaria says: \"Thank you!\"",
+              "question": "What does Maria say to be polite?",
+              "options": [
+                "Give me a pencil!",
+                "I want a pencil now!",
+                "Can I have a pencil, please?",
+                "Pencil! Pencil!"
+              ],
+              "answer": 2,
+              "feedback": "Great! 'Can I have a pencil, please?' is polite! ✏️"
+            },
+            "writing": {
+              "instruction": "✏️ Complete the polite request!",
+              "type": "write",
+              "prompt": "Can I have a pencil, _______?",
+              "answer": "please",
+              "hint": "This word makes it polite! 🙏",
+              "feedback": "Perfect! Can I have a pencil, please? 🙏✏️"
+            },
+            "speaking": {
+              "instruction": "🗣️ Ask politely! Say it out loud!",
+              "type": "speak",
+              "prompt": "Can I have a pencil, please?",
+              "ttsText": "Can I have a pencil, please?",
+              "image": "✏️",
+              "caption": "The School 🏫 — Be Polite!",
+              "feedback": "Very polite! 🌟🙏"
+            },
+            "mediation": {
+              "instruction": "🌐 Your friend needs help in English!",
+              "type": "mc",
+              "prompt": "Your friend wants to ask:\n¿Me puedes dar un lápiz, por favor?",
+              "options": [
+                "Give me a pencil!",
+                "I need pencil now!",
+                "Can I have a pencil, please?",
+                "Where is my pencil?"
+              ],
+              "answer": 2,
+              "feedback": "Perfect mediation! Can I have a pencil, please? ✏️🙏"
+            }
+          }
+        },
+        {
+          "index": 1,
+          "title": "Sorry, I Can't Help You.",
+          "vocabulary": [
+            "sorry",
+            "can't",
+            "help",
+            "that's okay",
+            "no problem",
+            "unfortunately"
+          ],
+          "narrative": {
+            "intro": "Sometimes we can't help — and that's okay! We say sorry politely at The School in Barrigón. 🏫"
+          },
+          "activities": {
+            "listening": {
+              "instruction": "🎧 Listen! What does the student say? Tap it!",
+              "type": "mc",
+              "ttsText": "Sorry! I'm sorry, I can't help you right now. I don't have a pencil. Sorry, I can't help you!",
+              "prompt": "😔 Sorry, I _______ help you.",
+              "options": [
+                "can 👍",
+                "will 🤝",
+                "can't 🙅",
+                "must ✅"
+              ],
+              "answer": 2,
+              "feedback": "Yes! Sorry, I can't help you. 😔"
+            },
+            "reading": {
+              "instruction": "📖 Read and choose!",
+              "type": "mc",
+              "story": "Pedro asks: \"Can I have an eraser, please?\"\nLuis says: \"Sorry, I can't help you.\"\n\"I don't have an eraser.\"\nPedro says: \"That's okay! No problem.\"",
+              "question": "Why can't Luis help Pedro?",
+              "options": [
+                "He doesn't want to help.",
+                "He doesn't have an eraser.",
+                "He is at the market.",
+                "He is angry."
+              ],
+              "answer": 1,
+              "feedback": "Great reading! Luis doesn't have an eraser! 🙅"
+            },
+            "writing": {
+              "instruction": "✏️ Complete the sentence!",
+              "type": "write",
+              "prompt": "Sorry, I can't _______ you.",
+              "answer": "help",
+              "hint": "We say this when we cannot assist! 🙅",
+              "feedback": "Perfect! Sorry, I can't help you! 😔"
+            },
+            "speaking": {
+              "instruction": "🗣️ Say it politely! Out loud!",
+              "type": "speak",
+              "prompt": "Sorry, I can't help you. I don't have one.",
+              "ttsText": "Sorry, I can't help you. I don't have one.",
+              "image": "😔",
+              "caption": "The School 🏫 — Be Kind!",
+              "feedback": "Very polite! 🌟"
+            },
+            "mediation": {
+              "instruction": "🌐 Help your friend say this in English!",
+              "type": "mc",
+              "prompt": "Your friend wants to say:\nLo siento, no te puedo ayudar.",
+              "options": [
+                "Yes, I can help you!",
+                "Sorry, I can't help you.",
+                "Give me that, please!",
+                "Thank you very much!"
+              ],
+              "answer": 1,
+              "feedback": "Excellent! Sorry, I can't help you. 😔🙏"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "title": "Discovering Our Classroom",
+      "location": "school",
+      "themes": [
+        {
+          "index": 0,
+          "title": "What's in Your Bag?",
+          "vocabulary": [],
+          "activities": {}
+        },
+        {
+          "index": 1,
+          "title": "The Book Is on the Table.",
+          "vocabulary": [],
+          "activities": {}
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "title": "This Beautiful Day",
+      "location": "park",
+      "themes": [
+        {
+          "index": 0,
+          "title": "The Weather Is Nice.",
+          "vocabulary": [],
+          "activities": {}
+        },
+        {
+          "index": 1,
+          "title": "We're Outside.",
+          "vocabulary": [],
+          "activities": {}
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "title": "I Can Connect with Nature!",
+      "location": "park",
+      "themes": [
+        {
+          "index": 0,
+          "title": "Look at the Birds!",
+          "vocabulary": [],
+          "activities": {}
+        },
+        {
+          "index": 1,
+          "title": "Let's Protect Our Animals.",
+          "vocabulary": [],
+          "activities": {}
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "title": "The Beautiful Mola",
+      "location": "church",
+      "themes": [
+        {
+          "index": 0,
+          "title": "The Mola Is Colorful.",
+          "vocabulary": [],
+          "activities": {}
+        },
+        {
+          "index": 1,
+          "title": "We Love the Mola.",
+          "vocabulary": [],
+          "activities": {}
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "title": "It's Time to Eat.",
+      "location": "shops",
+      "themes": [
+        {
+          "index": 0,
+          "title": "I Need a Fork.",
+          "vocabulary": [],
+          "activities": {}
+        },
+        {
+          "index": 1,
+          "title": "Let's Eat Together.",
+          "vocabulary": [],
+          "activities": {}
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "title": "My Evening Routine",
+      "location": "school",
+      "themes": [
+        {
+          "index": 0,
+          "title": "I Brush My Teeth.",
+          "vocabulary": [],
+          "activities": {}
+        },
+        {
+          "index": 1,
+          "title": "Time for Bed!",
+          "vocabulary": [],
+          "activities": {}
+        }
+      ]
+    }
+  ],
+  "_note": "Activities not yet built. Add scenarios following grade2.json structure."
+}
